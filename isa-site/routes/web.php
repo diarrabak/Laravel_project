@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+//Bringing controllers
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\subjectController;
+use App\Http\Controllers\SpecializationController;
+use App\Http\Controllers\LaboratoryController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\JobopeningController;
+use App\Http\Controllers\AcademicgroupController;
+use App\Http\Controllers\ResearchGroupController;
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+   // return view('welcome');
+    return view('auth.login');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('users', UserController::class);
+//Route::get('/users/{user}', [UserController::class, 'show']);
+Route::resource('subjects', SubjectController::class);
+Route::resource('specializations', SpecializationController::class);
+Route::resource('laboratories', LaboratoryController::class);
+Route::resource('departments', DepartmentController::class);
+Route::resource('jobopenings', JobopeningController::class);
+Route::resource('academicgroups', AcademicgroupController::class);
+Route::resource('researchgroups', ResearchgroupController::class);
