@@ -81,7 +81,9 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
+        $request->picture->store('images', 'public');
         $department->fill($request->input());
+        $department->picture= $request->picture->hashName();
         $department->save();
         return redirect()->action([DepartmentController::class,'index']);
     }

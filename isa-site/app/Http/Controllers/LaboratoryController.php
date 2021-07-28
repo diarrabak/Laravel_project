@@ -99,7 +99,9 @@ class LaboratoryController extends Controller
      */
     public function update(Request $request, Laboratory $laboratory)
     {
+        $request->picture->store('images', 'public');
         $laboratory->fill($request->input());
+        $laboratory->picture= $request->picture->hashName();
         $laboratory->save();
         return redirect()->action([LaboratoryController::class,'index']);
     }

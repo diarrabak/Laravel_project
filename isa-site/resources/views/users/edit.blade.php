@@ -9,7 +9,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" placeholder="First name, Last name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? $user ?? ''->name ??'' }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" placeholder="First name, Last name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? $user->name ??'' }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? $user ?? ''->email ??'' }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ?? $user->email ??'' }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -37,7 +37,7 @@
                             <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>
 
                             <div class="col-md-6">
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') ?? $user ?? ''->title ??''}}" required autocomplete="title">
+                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') ?? $user->title ??''}}" required autocomplete="title">
 
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
                             <label for="biography" class="col-md-4 col-form-label text-md-right">{{ __('Biography') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="biography" class="form-control @error('biography') is-invalid @enderror" name="biography"  required autocomplete="biography">{{ old('biography') ?? $user ?? ''->biography ??'' }} </textarea>
+                                <textarea id="biography" class="form-control @error('biography') is-invalid @enderror" name="biography"  required autocomplete="biography">{{ old('biography') ?? $user->biography ??'' }} </textarea>
 
                                 @error('biography')
                                     <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
                             <label for="research_gate" class="col-md-4 col-form-label text-md-right">{{ __('ResearchGate') }}</label>
 
                             <div class="col-md-6">
-                                <input id="research_gate" type="text" class="form-control @error('research_gate') is-invalid @enderror" name="research_gate" value="{{ old('research_gate') ?? $user ?? ''->research_gate ??''}}" required autocomplete="research_gate">
+                                <input id="research_gate" type="text" class="form-control @error('research_gate') is-invalid @enderror" name="research_gate" value="{{ old('research_gate') ?? $user->research_gate ??''}}" required autocomplete="research_gate">
 
                                 @error('research_gate')
                                     <span class="invalid-feedback" role="alert">
@@ -91,7 +91,7 @@
                             <label for="google_scholar" class="col-md-4 col-form-label text-md-right">{{ __('Google scholar') }}</label>
 
                             <div class="col-md-6">
-                                <input id="google_scholar" type="text" class="form-control @error('google_scholar') is-invalid @enderror" name="google_scholar" value="{{ old('google_scholar') ?? $user ?? ''->google_scholar ??''}}" required autocomplete="google_scholar">
+                                <input id="google_scholar" type="text" class="form-control @error('google_scholar') is-invalid @enderror" name="google_scholar" value="{{ old('google_scholar') ?? $user->google_scholar ??''}}" required autocomplete="google_scholar">
 
                                 @error('google_scholar')
                                     <span class="invalid-feedback" role="alert">

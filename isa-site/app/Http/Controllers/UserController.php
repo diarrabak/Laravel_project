@@ -17,9 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(20);
+        //We can get all users with User::get() or we can use the paginate function specify the number of objects per page
+        $users = User::paginate(20);  //Get all users (20 per page)
         return view('users.index')
-            ->with('users', $users);
+            ->with('users', $users);  //Send the users to the users/index view for browser rendering
     }
 
     /**
@@ -29,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $departments=Department::get()->pluck('name', 'id');
+        $departments=Department::get()->pluck('name', 'id'); //Choose all departments in pairs of name and id
         $academicgroups=Academicgroup::get()->pluck('name', 'id');
        return view('users.create')
        ->with('departments',$departments)
@@ -45,9 +46,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->picture->store('images', 'public');
+        $request->picture->store('images', 'public');  //Store the user picture and use the path for display
 
-        $user = new User([
+        $user = new User([  //Passing the form data to the user object
             "name" => $request->get('name'),
             "email" => $request->get('email'),
             "title" => $request->get('title'),
@@ -61,9 +62,9 @@ class UserController extends Controller
 
         ]);
 
-        $user->save(); // Finally, save the record.
+        $user->save(); // Finally, save the user.
 
-        return redirect()->action([UserController::class,'index']);
+        return redirect()->action([UserController::class,'index']); //Redirect to the index page
     }
 
     /**
@@ -74,6 +75,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        //Pass the current element to the show view for rendering
         return view('users.show', ['user' => $user]);
     }
 
@@ -85,15 +87,22 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        //Get all departments and academic groups in key pairs of name and id
         $departments=Department::get()->pluck('name', 'id');
         $academicgroups=Academicgroup::get()->pluck('name', 'id');
+
+        //Get the group of the current user to automatically select  
         $academicgroup = $user->academicgroup;
+
+         //Get the department of the current user to automatically select  
         $department = $user->department;
+        // The above data are sent to the edit view
         return view('users.edit')
         ->with('department', $department)
         ->with('academicgroups', $academicgroups)
         ->with('departments', $departments)
-        ->with('academicgroup', $academicgroup);
+        ->with('academicgroup', $academicgroup)
+        ->with('user', $user);
     }
 
     /**
@@ -105,7 +114,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        //store the new image 
+        $request->picture->store('images', 'public');
+        //Transfer the form data to the current user
         $user->fill($request->input());
+        //Replace the picture field of the user by the path of the new picture
+        $user->picture= $request->picture->hashName();
+        //Save the user and go to index page
         $user->save();
         return redirect()->action([UserController::class,'index']);
     }

@@ -89,7 +89,9 @@ class AcademicgroupController extends Controller
      */
     public function update(Request $request, Academicgroup $academicgroup)
     {
+        $request->picture->store('images', 'public');
         $academicgroup->fill($request->input());
+        $academicgroup->picture= $request->picture->hashName();
         $academicgroup->save();
         return redirect()->action([AcademicgroupController::class,'index']);
     }

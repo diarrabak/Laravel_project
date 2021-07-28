@@ -44,6 +44,12 @@ class Department extends Model
      {
          return $this->hasMany(Academicgroup::class);
      }
+     
+     //A department has many courses
+     public function courses()
+     {
+         return $this->hasMany(Course::class);
+     }
 
    
 }

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 //Bringing controllers
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\subjectController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SpecializationController;
 use App\Http\Controllers\LaboratoryController;
 use App\Http\Controllers\DepartmentController;
@@ -33,7 +33,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('users', UserController::class);
 //Route::get('/users/{user}', [UserController::class, 'show']);
-Route::resource('subjects', SubjectController::class);
+Route::resource('courses', CourseController::class);
 Route::resource('specializations', SpecializationController::class);
 Route::resource('laboratories', LaboratoryController::class);
 Route::resource('departments', DepartmentController::class);

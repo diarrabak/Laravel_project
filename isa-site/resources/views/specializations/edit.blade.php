@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="col">
-   <form action="{{ route('specializations.store', ['specialization' => $specialization]) }}" method="POST" enctype="multipart/form-data">
+   <form action="{{ route('specializations.update', ['specialization' => $specialization]) }}" method="POST" enctype="multipart/form-data">
+   @method('PUT')
    @csrf
     <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -69,7 +70,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-4 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Add specialization
+                                    Update specialization
                                 </button>
                             </div>
                             <div class="col-md-4">

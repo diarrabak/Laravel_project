@@ -102,7 +102,9 @@ class SpecializationController extends Controller
      */
     public function update(Request $request, Specialization $specialization)
     {
+        $request->picture->store('images', 'public');
         $specialization->fill($request->input());
+        $specialization->picture= $request->picture->hashName();
         $specialization->save();
         return redirect()->action([SpecializationController::class,'index']);
     }
