@@ -10,6 +10,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\JobopeningController;
 use App\Http\Controllers\AcademicgroupController;
 use App\Http\Controllers\ResearchGroupController;
+use App\Http\Controllers\InformationController;
 
 
 /*
@@ -40,3 +41,4 @@ Route::resource('departments', DepartmentController::class);
 Route::resource('jobopenings', JobopeningController::class);
 Route::resource('academicgroups', AcademicgroupController::class);
 Route::resource('researchgroups', ResearchgroupController::class);
+Route::resource('informations', InformationController::class);
