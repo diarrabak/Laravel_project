@@ -42,7 +42,7 @@ class JobopeningController extends Controller
     {
         Jobopening::create($request->input());
         
-        return redirect()->action(JobopeningController::class,'index');
+        return redirect()->action([JobopeningController::class,'index']);
     }
 
     /**

@@ -37,6 +37,11 @@ class User extends Authenticatable
          return $this->hasOne(Specialization::class);
      }
 
+     public function articles()
+     {
+         return $this->hasMany(Article::class);
+     }
+
      public function department()
      {
          return $this->belongsTo(Department::class);
@@ -46,6 +51,12 @@ class User extends Authenticatable
      {
          return $this->belongsTo(Academicgroup::class);
      }
+
+      //A user can have many roles
+    public function roles()
+    {
+    	return $this->belongsToMany(Role::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

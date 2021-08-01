@@ -123,6 +123,17 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <label class="col-md-4 col-form-label text-md-right" for="roles">Roles</label>
+        <div class="col-sm-6">
+            <select multiple name="roles[]" class="form-control" id="roles">
+                @foreach($roles as $id => $display)
+                    <option value="{{ $id }}" {{in_array($id, $ids) ? 'selected' :''}}>{{ $display }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

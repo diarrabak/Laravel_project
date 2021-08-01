@@ -11,6 +11,8 @@ use App\Http\Controllers\JobopeningController;
 use App\Http\Controllers\AcademicgroupController;
 use App\Http\Controllers\ResearchGroupController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RoleController;
 
 
 /*
@@ -42,3 +44,6 @@ Route::resource('jobopenings', JobopeningController::class);
 Route::resource('academicgroups', AcademicgroupController::class);
 Route::resource('researchgroups', ResearchgroupController::class);
 Route::resource('informations', InformationController::class);
+Route::resource('articles', ArticleController::class);
+Route::resource('roles', RoleController::class);
+

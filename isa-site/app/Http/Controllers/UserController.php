@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Department;
+use App\Models\Role;
 use App\Models\Academicgroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -32,8 +33,10 @@ class UserController extends Controller
     {
         $departments=Department::get()->pluck('name', 'id'); //Choose all departments in pairs of name and id
         $academicgroups=Academicgroup::get()->pluck('name', 'id');
+        $roles=Role::get()->pluck('name', 'id');
        return view('users.create')
        ->with('departments',$departments)
+       ->with('roles',$roles)
        ->with('academicgroups',$academicgroups)
        ->with('user', (new User()));
     }
@@ -63,6 +66,7 @@ class UserController extends Controller
         ]);
 
         $user->save(); // Finally, save the user.
+        $user->roles()->attach($request->get('roles'));
 
         return redirect()->action([UserController::class,'index']); //Redirect to the index page
     }
@@ -90,7 +94,12 @@ class UserController extends Controller
         //Get all departments and academic groups in key pairs of name and id
         $departments=Department::get()->pluck('name', 'id');
         $academicgroups=Academicgroup::get()->pluck('name', 'id');
-
+        $roles=Role::get()->pluck('name', 'id');
+        $currentRoles=$user->roles;
+        $ids=[];
+        foreach($currentRoles as $role){
+         $ids[]=$role->id;
+        }
         //Get the group of the current user to automatically select  
         $academicgroup = $user->academicgroup;
 
@@ -100,6 +109,9 @@ class UserController extends Controller
         return view('users.edit')
         ->with('department', $department)
         ->with('academicgroups', $academicgroups)
+        ->with('departments', $departments)
+        ->with('roles', $roles)
+        ->with('ids', $ids)
         ->with('departments', $departments)
         ->with('academicgroup', $academicgroup)
         ->with('user', $user);
@@ -122,6 +134,9 @@ class UserController extends Controller
         $user->picture= $request->picture->hashName();
         //Save the user and go to index page
         $user->save();
+        $user->roles()->detach();
+        $user->roles()->attach($request->get('roles'));
+
         return redirect()->action([UserController::class,'index']);
     }
 

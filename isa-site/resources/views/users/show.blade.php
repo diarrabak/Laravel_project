@@ -22,5 +22,14 @@
 
 </dl>
 
+<div class="row">
+   <h2 class="col-12"> List of roles </h2>
+
+    @foreach($user->roles as $role)
+   
+       <p class="col-4">{{$role->name}}</p>
+    
+    @endforeach
+</div>
 
 @endsection
