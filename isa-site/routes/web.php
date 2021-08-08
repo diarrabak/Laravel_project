@@ -26,10 +26,14 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
    // return view('welcome');
-    return view('auth.login');
-});
+   return view('auth.login');
+    //return view('frontpages.homepage');
+});*/
+
+Route::get('/', [DepartmentController::class, 'homepage']);
+
 
 Auth::routes();
 

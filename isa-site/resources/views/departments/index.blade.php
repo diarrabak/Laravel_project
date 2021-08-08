@@ -5,45 +5,36 @@
 @endsection
 
 @section('content')
-<table class="table">
-    <thead>
-        <tr><th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Image</th>
-            <th class="Actions">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($departments as $department)
-            <tr>
-                <td>{{ $department->id }}</td>
-                <td>{{ $department->name }}</td>
-                <td>{{ $department->description }} </td>
-                <td><img width="100" src="/storage/images/{{ $department->picture  }}" alt=''/>  </td>
-                <td class="actions">
-                <a
-                        href="{{ route('departments.show', ['department' => $department->id]) }}"
-                        alt="View"
-                        title="View">
-                      View
-                    </a>
-                    <a
-                        href="{{ route('departments.edit', ['department' => $department->id]) }}"
-                        alt="Edit"
-                        title="Edit">
-                      Edit
-                    </a>
-                    <form action="{{ route('departments.destroy', ['department' => $department->id]) }}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-                    </form>
 
-                </td>
-            </tr>
-        @empty
-        @endforelse
-    </tbody>
-</table>
+<div class="row">
+    @forelse ($departments as $department)
+
+
+    <article class="card col-md-5 col-lg-4">
+        <img class="card-img-top" src="/storage/images/{{ $department->picture  }}" alt='{{ $department->picture  }}' />
+        <div class="card-body">
+            <h5 class="card-title">{{ $department->name }}</h5>
+
+        </div>
+
+        <a href="{{ route('departments.show', ['department' => $department->id]) }}" alt="View" title="View">
+            See more
+        </a>
+        <a href="{{ route('departments.edit', ['department' => $department->id]) }}" alt="Edit" title="Edit">
+            Edit
+        </a>
+        <form action="{{ route('departments.destroy', ['department' => $department->id]) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
+        </form>
+
+    </article>
+
+
+    @empty
+    @endforelse
+
+</div>
+
 @endsection

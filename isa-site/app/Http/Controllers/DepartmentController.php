@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Laboratory;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -18,6 +19,13 @@ class DepartmentController extends Controller
         return view('departments.index',compact('departments'));
     }
 
+    /* Home page */
+    public function homepage()
+    {
+        $departments=Department::get();
+        $labs=Laboratory::get();
+        return view('frontpages.homepage',compact('departments'),compact('labs'));
+    }
     /**
      * Show the form for creating a new resource.
      *

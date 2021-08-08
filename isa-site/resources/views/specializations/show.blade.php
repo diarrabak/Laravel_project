@@ -1,26 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<dl class="row">
-    <dt class="col-sm-3">Specialization ID</dt>
-    <dd class="col-sm-9">{{ $specialization->id }}</dd>
+<div class="header">
+    <img class="department-image" src="/storage/images/{{ $specialization->picture  }}" alt='{{ $specialization->name }}' />
 
-    <dt class="col-sm-3">Specialization name</dt>
-    <dd class="col-sm-9">{{ $specialization->name }}</dd>
+    <h1 class="department depart-header">{{ $specialization->name }}</h1>
+    <p class="department depart-desc">{{ $specialization->description }}</dd>
+</div>
+<div class="row">
 
-    <dt class="col-sm-3">Description</dt>
-    <dd class="col-sm-9">{{ $specialization->description }}</dd>
+    <h2 class="col-12"> Courses in {{ $specialization->name }}</h2>
 
-    <dt class="col-sm-3">Image</dt>
-    <dd class="col-sm-9"><img src="/storage/images/{{ $specialization->picture  }}" alt=''/> </dd>
-
-    <dt class="col-sm-3">Specialization responsible</dt>
-    <dd class="col-sm-9">{{ $specialization->user->name }}</dd>
-
-    <dt class="col-sm-3">Specialization department</dt>
-    <dd class="col-sm-9">{{ $specialization->department->name }}</dd>
-
-</dl>
-
-
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Course title</th>
+                <th class="md-visible">Description </th>
+                <th class="lg-visible">Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($specialization->courses as $course)
+            <tr>
+                <td><a href="{{route('courses.show',['course'=>$course])}}"> {{$course->title}}</a></td>
+                <td class="md-visible">{{$course->description}}</td>
+                <td class="lg-visible">{{$course->semester}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 @endsection

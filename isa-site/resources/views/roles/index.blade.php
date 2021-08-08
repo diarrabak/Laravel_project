@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <table class="table">
     <thead>
         <tr>
@@ -15,30 +16,24 @@
     </thead>
     <tbody>
         @forelse ($roles as $role)
-            <tr>
-                <td>{{ $role->id }}</td>
-                <td>{{ $role->name }}</td>
-                <td class="actions">
-                <a
-                        href="{{ route('roles.show', ['role' => $role->id]) }}"
-                        alt="View"
-                        title="View">
-                      View
-                    </a>
-                    <a
-                        href="{{ route('roles.edit', ['role' => $role->id]) }}"
-                        alt="Edit"
-                        title="Edit">
-                      Edit
-                    </a>
-                    <form action="{{ route('roles.destroy', ['role' => $role->id]) }}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-                    </form>
+        <tr>
+            <td>{{ $role->id }}</td>
+            <td>{{ $role->name }}</td>
+            <td class="actions">
+                <a href="{{ route('roles.show', ['role' => $role->id]) }}" alt="View" title="View">
+                    View
+                </a>
+                <a href="{{ route('roles.edit', ['role' => $role->id]) }}" alt="Edit" title="Edit">
+                    Edit
+                </a>
+                <form action="{{ route('roles.destroy', ['role' => $role->id]) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
+                </form>
 
-                </td>
-            </tr>
+            </td>
+        </tr>
         @empty
         @endforelse
     </tbody>

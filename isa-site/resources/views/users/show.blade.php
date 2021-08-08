@@ -1,35 +1,52 @@
 @extends('layouts.app')
-
+<h1>Welcome to {{$user->title}} {{$user->name}}'s profile</h1>
 @section('content')
-<dl class="row">
-    <dt class="col-sm-3">User ID</dt>
-    <dd class="col-sm-9">{{ $user->id }}</dd>
+<article class="col-12">
+    <div class="row bio">
+        <div class="col-12">
+            <img src="/storage/images/{{ $user->picture  }}" alt='{{ $user->name }}' />
+            <p> Hello, I am {{ $user->title }} {{ $user->name }}</p>
+            <p> {{ $user->biography }}</p>
 
-    <dt class="col-sm-3">User name</dt>
-    <dd class="col-sm-9">{{ $user->name }}</dd>
+        </div>
+    </div>
 
-    <dt class="col-sm-3">Biography</dt>
-    <dd class="col-sm-9">{{ $user->biography }}</dd>
 
-    <dt class="col-sm-3">Picture</dt>
-    <dd class="col-sm-9"><img src="/storage/images/{{ $user->picture  }}" alt=''/></dd>
-
-    <dt class="col-sm-3">Research gate</dt>
-    <dd class="col-sm-9">{{ $user->research_gate }}</dd>
-
-    <dt class="col-sm-3">Google scholar</dt>
-    <dd class="col-sm-9">{{ $user->google_scholar}}</dd>
-
-</dl>
-
-<div class="row">
-   <h2 class="col-12"> List of roles </h2>
+    <!--div class="col-12">
+    <div class="row">
+   <h2 class="col-sm-12"> Roles of {{$user->name}}  </h2>
 
     @foreach($user->roles as $role)
    
-       <p class="col-4">{{$role->name}}</p>
+       <p class="col-sm-12">{{$role->name}}</p>
     
     @endforeach
 </div>
+</div-->
+
+    <div class="row">
+
+        <h4 class="col-sm-12"> Academic group</h4>
+
+        <p class="col-sm-12"> {{$user->academicgroup->name}} </p>
+
+        <h4 class="col-sm-12"> My research</h4>
+
+        <div class="col-sm-12">Research gate: {{ $user->research_gate }}</div>
+
+        <div class="col-sm-12">Google scholar: {{ $user->google_scholar}}</div>
+
+        <h4 class="col-sm-12"> My publications</h4>
+        <ul>
+
+            @foreach($user->articles as $article)
+
+            <li>{{$article->title}}</li>
+
+            @endforeach
+        </ul>
+        <p class="col-sm-12"><a href="mailto:{{$user->email}}" class="btn btn-primary">Contact me!</a></p>
+    </div>
+</article>
 
 @endsection
