@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="header">
-    <img class="department-image" src="/storage/images/doSRplUaMEZvGtbU6xU6Nu2T0j9v0YHuaPV5lmBy.jpg" alt='home page image' />
+    <img class="department-image home-page" src="/storage/images/doSRplUaMEZvGtbU6xU6Nu2T0j9v0YHuaPV5lmBy.jpg" alt='home page image' />
 
-    <h1 class="department depart-header">Welcome to ISA Mali</h1>
+    <h1 class="department depart-header front">Welcome to ISA Mali</h1>
     <p class="department depart-desc">Hello</p>
 </div>
 

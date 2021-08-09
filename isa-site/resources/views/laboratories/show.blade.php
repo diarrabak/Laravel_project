@@ -1,26 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<dl class="row">
-    <dt class="col-sm-3">Laboratory ID</dt>
-    <dd class="col-sm-9">{{ $laboratory->id }}</dd>
 
-    <dt class="col-sm-3">Lab name</dt>
-    <dd class="col-sm-9">{{ $laboratory->name }}</dd>
+<div class="header">
+    <img class="department-image" src="/storage/images/{{ $laboratory->picture  }}" alt='{{ $laboratory->name }}' />
 
-    <dt class="col-sm-3">Lab description</dt>
-    <dd class="col-sm-9">{{ $laboratory->description }}</dd>
+    <h1 class="department depart-header">{{ $laboratory->name }}</h1>
+    <p class="department depart-desc">{{ $laboratory->description }}</dd>
+</div>
+<div class="row">
 
-    <dt class="col-sm-3">Image</dt>
-    <dd class="col-sm-9"><img src="{{ $laboratory->picture  }}" alt=''/> </dd>
-
-    <dt class="col-sm-3">Lab responsible</dt>
-    <dd class="col-sm-9">{{ $laboratory->user->name }}</dd>
-
-    <dt class="col-sm-3">Lab department</dt>
-    <dd class="col-sm-9">{{ $laboratory->department->name }}</dd>
-
-</dl>
+    <h2 class="col-12"> Information about {{ $laboratory->name }} Lab</h2>
+    <p>The responsible of the {{ $laboratory->name }} lab is {{ $laboratory->user->name }} 
+        and its linked to the {{ $laboratory->department->name }} department.</p>
+    
+</div>
 
 
 @endsection
+
+

@@ -17,8 +17,8 @@ class InformationController extends Controller
      */
     public function index()
     {
-       $informations=Information::get();
-       return view('informations.index',compact('informations'));
+        $informations = Information::get();
+        return view('informations.index', compact('informations'));
     }
 
     /**
@@ -28,11 +28,10 @@ class InformationController extends Controller
      */
     public function create()
     {
-       $departments=Department::get()->pluck('name','id');;
-       return view('informations.create')
-       ->with('departments',$departments)
-       ->with('information',(new Information()));
-       
+        $departments = Department::get()->pluck('name', 'id');
+        return view('informations.create')
+            ->with('departments', $departments)
+            ->with('information', (new Information()));
     }
 
     /**
@@ -54,7 +53,7 @@ class InformationController extends Controller
 
         $information->save(); // Finally, save the record.
 
-        return redirect()->action([InformationController::class,'index']);
+        return redirect()->action([InformationController::class, 'index']);
     }
 
     /**
@@ -76,12 +75,12 @@ class InformationController extends Controller
      */
     public function edit(Information $information)
     {
-        $departments=Department::get()->pluck('name','id');
-        $department=$information->department;
-       return view('informations.edit')
-       ->with('departments',$departments)
-       ->with('department',$department)
-       ->with('information',$information);
+        $departments = Department::get()->pluck('name', 'id');
+        $department = $information->department;
+        return view('informations.edit')
+            ->with('departments', $departments)
+            ->with('department', $department)
+            ->with('information', $information);
     }
 
     /**
@@ -95,9 +94,9 @@ class InformationController extends Controller
     {
         $request->document->store('images', 'public');
         $information->fill($request->input());
-        $information->document= $request->document->hashName();
+        $information->document = $request->document->hashName();
         $information->save();
-        return redirect()->action([InformationController::class,'index']);
+        return redirect()->action([InformationController::class, 'index']);
     }
 
     /**
@@ -109,6 +108,6 @@ class InformationController extends Controller
     public function destroy(Information $information)
     {
         Information::where('id', $information->id)->delete();
-        return redirect()->action([InformationController::class,'index']);
+        return redirect()->action([InformationController::class, 'index']);
     }
 }

@@ -22,14 +22,15 @@
 
     margin: 0 auto;
     padding: 1em;
-    border:0;
+    border: 0;
 }
 
-.card:hover{
-    border:2px solid white;
+.card:hover {
+    border: 2px solid white;
 }
 
-h1,h2{
+h1,
+h2 {
     text-align: center;
 }
 
@@ -37,7 +38,6 @@ h1,h2{
 form {
     max-width: 1200px;
     margin: 0 auto;
-    
 }
 
 .department-image {
@@ -68,15 +68,18 @@ form {
 }
 
 .depart-header {
-    top: 10%;
+    top: 15%;
     left: 30%;
     font-size: 5em;
 }
 
 .depart-desc {
-    top: 40%;
+    top: 45%;
     left: 35%;
     font-size: 3em;
+}
+.front{
+    color:green;
 }
 
 h2 {
@@ -184,6 +187,12 @@ body {
         left: 20%;
         font-size: 4em;
     }
+
+    .row,
+    form {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -195,11 +204,15 @@ body {
         padding-right: 1em;
         padding-left: 1em;
     }
+
+    .depart-header {
+        left: 5%;
+    }
 }
 
 @media screen and (max-width: 576px) {
     .depart-header {
-        left: 15%;
+        left: 10%;
         font-size: 3em;
     }
 
@@ -214,13 +227,23 @@ body {
     }
 
     .department-image {
-        height: 400px;
+        height: 300px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .depart-header {
         left: 5%;
-        font-size: 3em;
+        font-size: 2.5em;
+    }
+
+    .department-image {
+        height: 200px;
+    }
+
+    .depart-desc {
+        top: 60%;
+        left: 35%;
+        font-size: 2em;
     }
 }
