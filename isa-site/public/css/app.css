@@ -11,7 +11,7 @@
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 1em;
-    width: 30%;
+    width: 45%;
     margin-bottom: 0.5em;
     margin-right: 1.75em;
     float: left;
@@ -25,7 +25,7 @@
     border: 0;
 }
 
-.card:hover {
+.card-img-top:hover,.bio img {
     border: 2px solid white;
 }
 
@@ -35,7 +35,7 @@ h2 {
 }
 
 .row,
-form {
+form,.collapse {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -43,7 +43,15 @@ form {
 .department-image {
     max-width: 100%;
     width: 100%;
-    height: 600px;
+    height: 500px;
+}
+.brand-isa >a, .brand-isa ul{
+    display: inline-block;
+}
+
+.brand-isa li{
+    display: inline-block;
+    text-decoration: none;
 }
 
 .container,
@@ -51,6 +59,7 @@ form {
     max-width: 100%;
     width: 100%;
     padding: 0;
+    margin-top: 0 !important;
 }
 
 .header {
@@ -66,7 +75,9 @@ form {
     max-width: 100%;
     height: 250px;
 }
-
+.card h5{
+    text-align: center;
+}
 .depart-header {
     top: 15%;
     left: 30%;
@@ -82,11 +93,30 @@ form {
     color:green;
 }
 
+.main-title, h4{
+    margin-top:1em;
+    margin-bottom: 1em;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 1em;
     font-size: 2em;
     margin-top: 1em;
+}
+.nav-top{
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+}
+.logo-login a{
+   color:white;
+}
+.logo-login li{
+    display:inline-block;
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -214,6 +244,13 @@ body {
     .depart-header {
         left: 10%;
         font-size: 3em;
+    }
+
+    .bio img {
+        width: 95%;
+        margin-bottom: 2.5%;
+        margin-right: 2.5%;
+        float: left;
     }
 
     .md-visible {

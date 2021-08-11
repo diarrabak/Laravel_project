@@ -21,42 +21,54 @@
 
 <body>
   <header>
+    <div class="nav-top">
+      <div class="row logo-login">
 
+        <div class="col-12 col-sm-6">
+          <a class="navbar-brand" href="{{ url('/') }}">
+            {{ config('app.name', 'Laravel') }}
+          </a>
+        </div>
+        <div class="col-12 offset-md-2 col-sm-6 col-md-4">
+          <ul>
+            <!-- Authentication Links -->
+            @if (Route::has('login'))
+            @guest
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </li>
+            @if (Route::has('register'))
+            <li class="nav-item">
+              <!--a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a-->
+              <a class="nav-link" href="{{ route('users.create') }}">{{ __('Register') }}</a>
+            </li>
+            @endif
+            @else
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+              </a>
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="{{ url('/') }}">
-        {{ config('app.name', 'Laravel') }}
-      </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            </li>
+            @endguest
+            @endif
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <!-- Authentication Links -->
-          @if (Route::has('login'))
-          @guest
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-          </li>
-          @if (Route::has('register'))
-          <li class="nav-item">
-            <!--a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a-->
-            <a class="nav-link" href="{{ route('users.create') }}">{{ __('Register') }}</a>
-          </li>
-          @endif
-          @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">
-              {{ __('Logout') }}
-            </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-            </form>
-          </li>
-          @endguest
-          @endif
           <li><a class="nav-link" href="{{ route('departments.index') }}">{{ __('Departments') }}</a></li>
           <li><a class="nav-link" href="{{ route('laboratories.index') }}">{{ __('Laboratories') }}</a></li>
           <li><a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a></li>
@@ -70,10 +82,10 @@
   </header>
 
   <main role="main">
-      <div class="row">
-        <!-- Buttons -->
-        @yield('buttons')
-      </div>
+    <div class="row">
+      <!-- Buttons -->
+      @yield('buttons')
+    </div>
     <div class="container mt-1">
       <!--div class="row"-->
       <!-- Content -->

@@ -5,27 +5,36 @@
 @endsection
 
 @section('content')
+
+<h1 class="main-title">Staff directory of ISA</h1>
 <div class="row">
-@forelse ($users as $user)
+    @forelse ($users as $user)
 
     <article class="card col-md-5 col-lg-4">
         <img class="card-img-top" src="/storage/images/{{ $user->picture  }}" alt='{{$user->name}}' />
         <div class="card-body">
-            <h5 class="card-title">{{ $user->name }}</h5>
-            <p class="card-text">{{ $user->biography }}. You can discover more about his/her research on <a href={{$user->research_gate}}>Researgate </a> and <a href={{$user->google_scholar}}>Google scholar. </a></p>
-            <a class="btn btn-success" href="{{ route('users.show', ['user' => $user->id]) }}"> See more </a>
-            <a href="{{ route('users.edit', ['user' => $user->id]) }}" alt="Edit" title="Edit">
-                Edit
-            </a>
-            <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST">
-                @method('DELETE')
-                @csrf
-                <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-            </form>
+
+            <h5 class="card-title"><a href="{{ route('users.show', ['user' => $user->id]) }}"> {{ $user->name }} </a></h5>
+            <p class="card-text">Learn more about {{ $user->name }}'s research on <a href={{$user->research_gate}}>Researgate </a> and <a href={{$user->google_scholar}}>Google scholar. </a></p>
+            <div class="row">
+                <!--a class="btn btn-success" href="{{ route('users.show', ['user' => $user->id]) }}"> See more </a-->
+                <div class="col-12 col-sm-4">
+                    <a  class="btn btn-primary" href="{{ route('users.edit', ['user' => $user->id]) }}" alt="Edit" title="Edit">
+                        Edit
+                    </a>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger" title="Delete" value="DELETE">Delete</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </article>
 
-@empty
-@endforelse
+    @empty
+    @endforelse
 </div>
 @endsection

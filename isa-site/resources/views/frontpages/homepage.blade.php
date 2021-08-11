@@ -18,21 +18,27 @@
     <article class="card col-sm-10 col-md-5 col-lg-4">
         <img class="card-img-top" src="/storage/images/{{ $department->picture  }}" alt='{{ $department->picture  }}' />
         <div class="card-body">
-            <h5 class="card-title">{{ $department->name }}</h5>
+        <h5 class="card-title"><a href="{{ route('departments.show', ['department' => $department->id]) }}"> {{ $department->name }} </a></h5>
 
         </div>
 
-        <a href="{{ route('departments.show', ['department' => $department->id]) }}" alt="View" title="View">
-            See more
-        </a>
-        <a href="{{ route('departments.edit', ['department' => $department->id]) }}" alt="Edit" title="Edit">
-            Edit
-        </a>
-        <form action="{{ route('departments.destroy', ['department' => $department->id]) }}" method="POST">
-            @method('DELETE')
-            @csrf
-            <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-        </form>
+        <div class="row">
+            
+            <div class="col-12 col-sm-4">
+                <a class="btn btn-primary" href="{{ route('departments.edit', ['department' => $department->id]) }}" alt="Edit" title="Edit">
+                    Edit
+                </a>
+            </div>
+            <div class="col-12 col-sm-4">
+                <form action="{{ route('departments.destroy', ['department' => $department->id]) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger" type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
+                </form>
+            </div>
+        </div>
+
+
 
     </article>
 
@@ -53,21 +59,27 @@
     <article class="card col-sm-10 col-md-5 col-lg-4">
         <img class="card-img-top" src="/storage/images/{{ $laboratory->picture  }}" alt='{{ $laboratory->picture  }}' />
         <div class="card-body">
-            <h5 class="card-title">{{ $laboratory->name }}</h5>
+        <h5 class="card-title"><a href="{{ route('laboratories.show', ['laboratory' => $laboratory->id]) }}"> {{ $laboratory->name }} </a></h5>
 
         </div>
+        <div class="row">
+            
+            <div class="col-12 col-sm-4">
+                <a class="btn btn-primary" href="{{ route('laboratories.edit', ['laboratory' => $laboratory->id]) }}" alt="Edit" title="Edit">
+                    Edit
+                </a>
+            </div>
+            <div class="col-12 col-sm-4">
+                <form action="{{ route('laboratories.destroy', ['laboratory' => $laboratory->id]) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger" type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
+                </form>
+            </div>
+        </div>
 
-        <a href="{{ route('laboratories.show', ['laboratory' => $laboratory->id]) }}" alt="View" title="View">
-            See more
-        </a>
-        <a href="{{ route('laboratories.edit', ['laboratory' => $laboratory->id]) }}" alt="Edit" title="Edit">
-            Edit
-        </a>
-        <form action="{{ route('laboratories.destroy', ['laboratory' => $laboratory->id]) }}" method="POST">
-            @method('DELETE')
-            @csrf
-            <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-        </form>
+
+
 
     </article>
 

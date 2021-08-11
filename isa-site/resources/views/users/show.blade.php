@@ -1,14 +1,13 @@
 @extends('layouts.app')
-<h1>Welcome to {{$user->title}} {{$user->name}}'s profile</h1>
-@section('content')
-<article class="col-12">
-    <div class="row bio">
-        <div class="col-12">
-            <img src="/storage/images/{{ $user->picture  }}" alt='{{ $user->name }}' />
-            <p> Hello, I am {{ $user->title }} {{ $user->name }}</p>
-            <p> {{ $user->biography }}</p>
 
-        </div>
+@section('content')
+
+<h1 class="main-title">Profile of {{$user->title}} {{$user->name}}</h1>
+
+<article class="row bio">
+    <div class="col-12">
+        <img src="/storage/images/{{ $user->picture  }}" alt='{{ $user->name }}' />
+        <p> {{ $user->biography }}</p>
     </div>
 
 
