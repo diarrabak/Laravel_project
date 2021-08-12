@@ -8,84 +8,92 @@
     <p class="department depart-desc">Hello</p>
 </div>
 
+<div class="presentation">
+    <h2 class="col-12">Welcome message from Prof Kone, the director</h2>
+    <img src="/storage/images/niGhc5Bqgtm1EFCSQOQP2PGrmVMuhTQ8Pz3m0tSh.jpg" alt='Picture of the director' />
+
+    <p class="director-message">
+        The Institute of Applied Sciences (ISA) of the University of Sciences, Techniques and Technologies of Bamako (USTTB) offers professional license-level training programs covering the field of applied sciences.
+        These programs correspond to the needs of the national economy and to the most exciting jobs in Mali: those in industry, services and laboratories.
+        Since its creation in 2011, ISA has been committed to providing its future graduates with a good training in the field of Applied Sciences in addition
+        to learning about working methods in companies. The institute also offers continuous training to personnel in industries, laboratories and services,
+        which allows them to acquire new skills and increase the performance of national and international companies working in Mali.
+        Dear future students, with a competent and experienced faculty, ISA aims to prepare for your future by offering you quality and recognized training,
+        corresponding to your aspirations in order to promote your integration into a heterogeneous and evolving professional world.
+    </p>
+</div>
+
 <div class="row">
 
-    <h2 class="col-12"> Programs and outcomes</h2>
-
-    @forelse ($departments as $department)
+    <h2 class="col-12"> Discover our institute</h2>
 
 
     <article class="card col-sm-10 col-md-5 col-lg-4">
-        <img class="card-img-top" src="/storage/images/{{ $department->picture  }}" alt='{{ $department->picture  }}' />
+        <img class="card-img-top" src="/storage/images/2p8Xu5knOY2D7rLGNc9JP6Zk2WzmS4kUKY3dPSe1.jpg" alt='Departments' />
         <div class="card-body">
-        <h5 class="card-title"><a href="{{ route('departments.show', ['department' => $department->id]) }}"> {{ $department->name }} </a></h5>
+            <h5 class="card-title"><a href="{{ route('departments.index') }}"> Departments </a></h5>
 
         </div>
-
-        <div class="row">
-            
-            <div class="col-12 col-sm-4">
-                <a class="btn btn-primary" href="{{ route('departments.edit', ['department' => $department->id]) }}" alt="Edit" title="Edit">
-                    Edit
-                </a>
-            </div>
-            <div class="col-12 col-sm-4">
-                <form action="{{ route('departments.destroy', ['department' => $department->id]) }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button class="btn btn-danger" type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-                </form>
-            </div>
-        </div>
-
 
 
     </article>
 
+    <article class="card col-sm-10 col-md-5 col-lg-4">
+        <img class="card-img-top" src="/storage/images/jTjPP9wqIhh6zYRlNv40fz7Gw6gbEw1ka4u0UvgP.jpg" alt='Laboratories' />
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ route('laboratories.index') }}"> Laboratories</a></h5>
 
-    @empty
-    @endforelse
+        </div>
+
+
+    </article>
+
+    <article class="card col-sm-10 col-md-5 col-lg-4">
+        <img class="card-img-top" src="/storage/images/vphoP1ANXVt38TLFEOEBuc1e55iUvOnUeZZdphJG.png" alt='Academic groups' />
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ route('academicgroups.index') }}"> Academic groups</a></h5>
+
+        </div>
+
+
+    </article>
 
 </div>
 
 
 <div class="row">
 
-    <h2 class="col-12"> Experimental facilities</h2>
-
-    @forelse ($labs as $laboratory)
-
+    <h2 class="col-12"> Students corner</h2>
 
     <article class="card col-sm-10 col-md-5 col-lg-4">
-        <img class="card-img-top" src="/storage/images/{{ $laboratory->picture  }}" alt='{{ $laboratory->picture  }}' />
+        <img class="card-img-top" src="/storage/images/2p8Xu5knOY2D7rLGNc9JP6Zk2WzmS4kUKY3dPSe1.jpg" alt='Departments' />
         <div class="card-body">
-        <h5 class="card-title"><a href="{{ route('laboratories.show', ['laboratory' => $laboratory->id]) }}"> {{ $laboratory->name }} </a></h5>
+            <h5 class="card-title"><a href="{{ url('/student') }}"> Admissions </a></h5>
 
         </div>
-        <div class="row">
-            
-            <div class="col-12 col-sm-4">
-                <a class="btn btn-primary" href="{{ route('laboratories.edit', ['laboratory' => $laboratory->id]) }}" alt="Edit" title="Edit">
-                    Edit
-                </a>
-            </div>
-            <div class="col-12 col-sm-4">
-                <form action="{{ route('laboratories.destroy', ['laboratory' => $laboratory->id]) }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button class="btn btn-danger" type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-                </form>
-            </div>
-        </div>
-
-
 
 
     </article>
 
+    <article class="card col-sm-10 col-md-5 col-lg-4">
+        <img class="card-img-top" src="/storage/images/jTjPP9wqIhh6zYRlNv40fz7Gw6gbEw1ka4u0UvgP.jpg" alt='Laboratories' />
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ route('informations.index') }}"> News</a></h5>
 
-    @empty
-    @endforelse
+        </div>
+
+
+    </article>
+
+    <article class="card col-sm-10 col-md-5 col-lg-4">
+        <img class="card-img-top" src="/storage/images/vphoP1ANXVt38TLFEOEBuc1e55iUvOnUeZZdphJG.png" alt='Academic groups' />
+        <div class="card-body">
+            <h5 class="card-title"><a href="{{ url('/alumni') }}"> Alumni</a></h5>
+
+        </div>
+
+
+    </article>
 
 </div>
 @endsection

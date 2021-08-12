@@ -7,7 +7,7 @@
     user-select: none;
 }
 
-.bio img {
+.bio img, .presentation img {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 1em;
@@ -17,10 +17,12 @@
     float: left;
 }
 
+.presentation img {
+    width: 40%;
+}
+
 .card {
     margin-bottom: 1em;
-
-    margin: 0 auto;
     padding: 1em;
     border: 0;
 }
@@ -35,7 +37,7 @@ h2 {
 }
 
 .row,
-form,.collapse {
+form,.collapse, .presentation {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -45,13 +47,18 @@ form,.collapse {
     width: 100%;
     height: 500px;
 }
-.brand-isa >a, .brand-isa ul{
-    display: inline-block;
+.presentation p{
+ text-align: justify;
+ line-height: 1.75;
+ 
 }
-
-.brand-isa li{
-    display: inline-block;
-    text-decoration: none;
+.presentation{
+   padding: 0 2em;
+    margin-bottom: 0.5em;
+}
+.navbar li{
+   margin-left:2em;
+   font-size: 1.25em;
 }
 
 .container,
@@ -117,6 +124,7 @@ h2 {
 .logo-login li{
     display:inline-block;
     text-decoration: none;
+    margin-left: 1em;
 }
 
 @media (min-width: 768px) {
@@ -246,7 +254,7 @@ body {
         font-size: 3em;
     }
 
-    .bio img {
+    .bio img, .presentation img {
         width: 95%;
         margin-bottom: 2.5%;
         margin-right: 2.5%;

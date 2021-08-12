@@ -34,6 +34,16 @@ use App\Http\Controllers\RoleController;
 
 Route::get('/', [DepartmentController::class, 'homepage']);
 
+Route::get('/student',function(){
+    return view('frontpages.student');
+});
+
+
+Route::get('/alumni',function(){
+    return view('frontpages.testimonial');
+});
+
+
 
 Auth::routes();
 

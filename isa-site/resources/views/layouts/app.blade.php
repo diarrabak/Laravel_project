@@ -29,7 +29,7 @@
             {{ config('app.name', 'Laravel') }}
           </a>
         </div>
-        <div class="col-12 offset-md-2 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6">
           <ul>
             <!-- Authentication Links -->
             @if (Route::has('login'))
@@ -56,6 +56,12 @@
             </li>
             @endguest
             @endif
+            <li>
+              <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </li>
           </ul>
         </div>
       </div>
@@ -68,15 +74,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-
-          <li><a class="nav-link" href="{{ route('departments.index') }}">{{ __('Departments') }}</a></li>
+          <li><a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a></li>
+          <li><a class="nav-link" href="{{ route('departments.index') }}">{{ __('Faculties') }}</a></li>
           <li><a class="nav-link" href="{{ route('laboratories.index') }}">{{ __('Laboratories') }}</a></li>
-          <li><a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a></li>
+          <li><a class="nav-link" href="{{ url('/student') }}">{{ __('Students') }}</a></li>
+          <li><a class="nav-link" href="{{ url('/alumni') }}">{{ __('Alumni') }}</a></li>
+          <li><a class="nav-link" href="{{ route('informations.index') }}">{{ __('News') }}</a></li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
       </div>
     </nav>
   </header>
