@@ -5,47 +5,50 @@
 @endsection
 
 @section('content')
-<table class="table">
-    <thead>
-        <tr><th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Files</th>
-            <th>Department</th>
-            <th class="Actions">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($informations as $information)
-            <tr>
-                <td>{{ $information->id }}</td>
-                <td>{{ $information->title }}</td>
-                <td>{{ $information->description }} </td>
-                <td><a href="/storage/images/{{ $information->document  }}" download> Download</a> </td>
-                <td>{{ $information->department->name }}  </td>
-                <td class="actions">
-                <a
-                        href="{{ route('informations.show', ['information' => $information->id]) }}"
-                        alt="View"
-                        title="View">
-                      View
-                    </a>
-                    <a
-                        href="{{ route('informations.edit', ['information' => $information->id]) }}"
-                        alt="Edit"
-                        title="Edit">
-                      Edit
-                    </a>
-                    <form action="{{ route('informations.destroy', ['information' => $information->id]) }}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
-                    </form>
 
-                </td>
-            </tr>
-        @empty
-        @endforelse
-    </tbody>
-</table>
+<div class="header">
+    <img class="department-image" src="/storage/images/news-img.jpg" alt='news picture' />
+
+    <h1 class="department depart-header">Hot news of the moment</h1>
+
+</div>
+
+<div class="row">
+    @forelse ($informations as $information)
+
+
+    <article class="news-article col-md-5">
+
+        <h5> {{ $information->title }} for {{ $information->department->name }}</h5>
+        <p class="info-desc">{{$information->description}}</p>
+        <p> <a class="btn btn-success" href="/storage/images/{{ $information->document  }}" download> Download</a> </p>
+
+        <div class="row">
+
+            <div class="col-12 col-sm-4">
+                <a class="btn btn-primary" href="{{ route('informations.edit', ['information' => $information->id]) }}" alt="Edit" title="Edit">
+                    Edit
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                <form action="{{ route('informations.destroy', ['information' => $information->id]) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger" title="Delete" value="DELETE">Delete</button>
+                </form>
+            </div>
+        </div>
+
+
+
+    </article>
+
+
+    @empty
+    @endforelse
+
+</div>
+
+
 @endsection

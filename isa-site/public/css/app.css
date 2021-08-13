@@ -104,6 +104,22 @@ form,.collapse, .presentation {
     margin-top:1em;
     margin-bottom: 1em;
 }
+.news-article{
+    margin:1.25em;
+    background-color: lightgray;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+.news-article h5{
+    color: #3232c4;
+}
+.news-article .info-desc{
+    display: none;
+}
+
+.news-article:hover .info-desc{
+    display: block;
+}
 
 h2 {
     text-align: center;

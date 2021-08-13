@@ -6,7 +6,7 @@
     <img class="department-image" src="/storage/images/{{ $department->picture  }}" alt='{{ $department->name }}' />
 
     <h1 class="department depart-header">{{ $department->name }}</h1>
-    <p class="department depart-desc">{{ $department->description }}</dd>
+    <p class="department depart-desc">{{ $department->description }}</p>
 </div>
 <div class="row">
 
