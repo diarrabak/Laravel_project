@@ -8,44 +8,62 @@
     <h1 class="department depart-header">{{ $department->name }}</h1>
     <p class="department depart-desc">{{ $department->description }}</p>
 </div>
+
 <div class="row">
 
     <h2 class="col-12"> Specializations in {{ $department->name }}</h2>
-    <table class="table table-striped">
+
+    <table class="table">
         <thead>
             <tr>
-                <th>Program name</th>
-                <th class="md-visible">Description </th>
-                <th class="lg-visible">Location</th>
+                <th>Field</th>
+                <th class="md-visible">Head of program </th>
+                <th class="lg-visible">Description </th>
             </tr>
         </thead>
         <tbody>
+
             @foreach($department->specializations as $specialization)
+
             <tr>
-                <td><a href="{{route('specializations.show',['specialization'=>$specialization])}}"> {{$specialization->name}}</a></td>
-                <td class="md-visible">{{$specialization->description}}</td>
-                <td class="lg-visible">Campus of Badalabougou</td>
+                <td>
+                    <img class="special-img" src="/storage/images/{{ $specialization->picture  }}" alt='{{ $specialization->name }}' />
+                    <div>
+                        <a href="{{route('specializations.show',['specialization'=>$specialization])}}"> {{$specialization->name}}</a>
+                    </div>
+                </td>
+                <td class="md-visible"> <a href="{{route('users.show',['user'=>$specialization->user])}}">{{$specialization->user->name}}</a></td>
+                <td class="lg-visible">{{$specialization->description}}</td>
+
             </tr>
             @endforeach
         </tbody>
     </table>
+
 </div>
 
 <div class="row">
 
     <h2 class="col-12"> Academic groups in {{ $department->name }}</h2>
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th>Group</th>
                 <th class="md-visible">Description </th>
+                <th class="lg-visible"> Department </th>
             </tr>
         </thead>
         <tbody>
             @foreach($department->academicgroups as $academicgroup)
             <tr>
-                <td><a href="{{route('academicgroups.show',['academicgroup'=>$academicgroup])}}"> {{$academicgroup->name}}</a></td>
+                <td>
+                    <img class="special-img" src="/storage/images/{{ $academicgroup->picture  }}" alt='{{ $academicgroup->name }}' />
+                    <div>
+                        <a href="{{route('academicgroups.show',['academicgroup'=>$academicgroup])}}"> {{$academicgroup->name}}</a>
+                    </div>
+
                 <td class="md-visible">{{$academicgroup->description}}</td>
+                <td class="lg-visible"> <a href="{{route('departments.show',['department'=>$academicgroup->department])}}">{{$academicgroup->department->name}}</a></td>
 
             </tr>
             @endforeach
@@ -53,15 +71,15 @@
     </table>
 </div>
 
+
 <div class="row">
 
-    <h2 class="col-12"> Job openings in {{ $department->name }}</h2>
-    <table class="table table-striped">
+    <h2 class="col-12"> Career path in {{ $department->name }}</h2>
+    <table class="table">
         <thead>
             <tr>
                 <th>Job title</th>
                 <th class="md-visible">Description </th>
-                <th class="lg-visible">Industry</th>
             </tr>
         </thead>
         <tbody>
@@ -69,7 +87,6 @@
             <tr>
                 <td><a href="{{route('jobopenings.show',['jobopening'=>$jobopening])}}"> {{$jobopening->name}}</a></td>
                 <td class="md-visible">{{$jobopening->description}}</td>
-                <td class="lg-visible">Industry</td>
             </tr>
             @endforeach
         </tbody>

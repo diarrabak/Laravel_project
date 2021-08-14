@@ -5,7 +5,10 @@
     <img class="department-image" src="/storage/images/{{ $specialization->picture  }}" alt='{{ $specialization->name }}' />
 
     <h1 class="department depart-header">{{ $specialization->name }}</h1>
-    <p class="department depart-desc">{{ $specialization->description }}</dd>
+</div>
+<div class="row">
+    <h2 class="col-12"> {{ $specialization->name }} program details</h2>
+    <p class="col-12">{{ $specialization->description }}</p>
 </div>
 <div class="row">
 

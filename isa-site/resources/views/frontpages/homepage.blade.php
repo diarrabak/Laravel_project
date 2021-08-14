@@ -8,7 +8,7 @@
     <p class="department depart-desc">Hello</p>
 </div>
 
-<div class="presentation">
+<article class="presentation">
     <h2 class="col-12">Welcome message from Prof Kone, the director</h2>
     <img src="/storage/images/niGhc5Bqgtm1EFCSQOQP2PGrmVMuhTQ8Pz3m0tSh.jpg" alt='Picture of the director' />
 
@@ -21,7 +21,7 @@
         Dear future students, with a competent and experienced faculty, ISA aims to prepare for your future by offering you quality and recognized training,
         corresponding to your aspirations in order to promote your integration into a heterogeneous and evolving professional world.
     </p>
-</div>
+</article>
 
 <div class="row">
 
@@ -66,7 +66,7 @@
     <h2 class="col-12"> Students corner</h2>
 
     <article class="card col-sm-10 col-md-5 col-lg-4">
-        <img class="card-img-top" src="/storage/images/2p8Xu5knOY2D7rLGNc9JP6Zk2WzmS4kUKY3dPSe1.jpg" alt='Departments' />
+        <img class="card-img-top" src="/storage/images/admission.jpg" alt='Admission to the programs' />
         <div class="card-body">
             <h5 class="card-title"><a href="{{ url('/student') }}"> Admissions </a></h5>
 
@@ -76,7 +76,7 @@
     </article>
 
     <article class="card col-sm-10 col-md-5 col-lg-4">
-        <img class="card-img-top" src="/storage/images/jTjPP9wqIhh6zYRlNv40fz7Gw6gbEw1ka4u0UvgP.jpg" alt='Laboratories' />
+        <img class="card-img-top" src="/storage/images/new-main.jpg" alt='news from the school' />
         <div class="card-body">
             <h5 class="card-title"><a href="{{ route('informations.index') }}"> News</a></h5>
 
@@ -86,7 +86,7 @@
     </article>
 
     <article class="card col-sm-10 col-md-5 col-lg-4">
-        <img class="card-img-top" src="/storage/images/vphoP1ANXVt38TLFEOEBuc1e55iUvOnUeZZdphJG.png" alt='Academic groups' />
+        <img class="card-img-top" src="/storage/images/alumni.jpg" alt='Alumni picture' />
         <div class="card-body">
             <h5 class="card-title"><a href="{{ url('/alumni') }}"> Alumni</a></h5>
 

@@ -22,7 +22,7 @@
 }
 
 .card {
-    margin-bottom: 1em;
+    margin-bottom: 0em;
     padding: 1em;
     border: 0;
 }
@@ -54,13 +54,26 @@ form,.collapse, .presentation {
 }
 .presentation{
    padding: 0 2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    margin-top: 2em;
+}
+.presentation h2{
+    margin-bottom: 1em;
 }
 .navbar li{
    margin-left:2em;
    font-size: 1.25em;
 }
+main{
+    position: relative;
+}
 
+.add-btn{
+    position:absolute;
+    top:5%;
+    left:20%;
+    z-index: 100;
+}
 .container,
 .header {
     max-width: 100%;
@@ -121,11 +134,19 @@ form,.collapse, .presentation {
     display: block;
 }
 
+.special-img{
+    max-width: 100%;
+    width: 50%;
+}
+td{
+    width: 32%;
+}
+
 h2 {
     text-align: center;
-    margin-bottom: 1em;
     font-size: 2em;
-    margin-top: 1em;
+    margin-top:0;
+    margin-bottom: 0.5em;
 }
 .nav-top{
     max-width: 100%;
@@ -254,6 +275,10 @@ body {
         display: none;
     }
 
+   td{
+       width: 50%;
+   }
+
     .card {
         padding-right: 1em;
         padding-left: 1em;
@@ -269,6 +294,12 @@ body {
         left: 10%;
         font-size: 3em;
     }
+    td{
+        width: 100%;
+    }
+    .special-img{
+        width: 90%;
+    } 
 
     .bio img, .presentation img {
         width: 95%;
@@ -276,6 +307,7 @@ body {
         margin-right: 2.5%;
         float: left;
     }
+   
 
     .md-visible {
         display: none;

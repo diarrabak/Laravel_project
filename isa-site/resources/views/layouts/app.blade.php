@@ -87,7 +87,7 @@
   </header>
 
   <main role="main">
-    <div class="row">
+    <div class="add-btn row">
       <!-- Buttons -->
       @yield('buttons')
     </div>
