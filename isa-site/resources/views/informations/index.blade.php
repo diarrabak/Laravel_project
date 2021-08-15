@@ -9,7 +9,7 @@
 <div class="header">
     <img class="department-image" src="/storage/images/news-img.jpg" alt='news picture' />
 
-    <h1 class="department depart-header">Hot news of the moment</h1>
+    <!--h1 class="department depart-header">Hot news of the moment</h1-->
 
 </div>
 

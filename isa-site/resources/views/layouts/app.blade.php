@@ -78,7 +78,7 @@
           <li><a class="nav-link" href="{{ route('departments.index') }}">{{ __('Faculties') }}</a></li>
           <li><a class="nav-link" href="{{ route('laboratories.index') }}">{{ __('Laboratories') }}</a></li>
           <li><a class="nav-link" href="{{ url('/student') }}">{{ __('Students') }}</a></li>
-          <li><a class="nav-link" href="{{ url('/alumni') }}">{{ __('Alumni') }}</a></li>
+          <li><a class="nav-link" href="{{ route('testimonials.index') }}" >{{ __('Alumni') }}</a></li>
           <li><a class="nav-link" href="{{ route('informations.index') }}">{{ __('News') }}</a></li>
         </ul>
 

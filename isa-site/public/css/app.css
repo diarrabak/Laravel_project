@@ -7,7 +7,8 @@
     user-select: none;
 }
 
-.bio img, .presentation img {
+.bio img,
+.presentation img {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 1em;
@@ -27,7 +28,8 @@
     border: 0;
 }
 
-.card-img-top:hover,.bio img {
+.card-img-top:hover,
+.bio img {
     border: 2px solid white;
 }
 
@@ -37,7 +39,9 @@ h2 {
 }
 
 .row,
-form,.collapse, .presentation {
+form,
+.collapse,
+.presentation {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -47,31 +51,30 @@ form,.collapse, .presentation {
     width: 100%;
     height: 500px;
 }
-.presentation p{
- text-align: justify;
- line-height: 1.75;
- 
+.presentation p {
+    text-align: justify;
+    line-height: 1.75;
 }
-.presentation{
-   padding: 0 2em;
+.presentation {
+    padding: 0 2em;
     margin-bottom: 1.5em;
     margin-top: 2em;
 }
-.presentation h2{
+.presentation h2 {
     margin-bottom: 1em;
 }
-.navbar li{
-   margin-left:2em;
-   font-size: 1.25em;
+.navbar li {
+    margin-left: 2em;
+    font-size: 1.25em;
 }
-main{
+main {
     position: relative;
 }
 
-.add-btn{
-    position:absolute;
-    top:5%;
-    left:20%;
+.add-btn {
+    position: absolute;
+    top: 5%;
+    left: 20%;
     z-index: 100;
 }
 .container,
@@ -87,6 +90,25 @@ main{
     position: relative;
 }
 
+.testimonial {
+    padding-bottom: 1.5em;
+    background-color: white;
+    color: black;
+    margin-right: 0.15em;
+    text-align: justify;
+}
+.testimonial h4,
+.testimonial h5 {
+    text-align: center;
+}
+.testimonial img {
+    margin-left: 40%;
+    max-width: 100%;
+    width: 20%;
+}
+.documents li{
+    text-align: justify;
+}
 .department {
     position: absolute;
     color: white;
@@ -95,7 +117,7 @@ main{
     max-width: 100%;
     height: 250px;
 }
-.card h5{
+.card h5 {
     text-align: center;
 }
 .depart-header {
@@ -109,57 +131,59 @@ main{
     left: 35%;
     font-size: 3em;
 }
-.front{
-    color:green;
+.front {
+    color: green;
 }
 
-.main-title, h4{
-    margin-top:1em;
+.main-title,
+h4 {
+    margin-top: 1em;
     margin-bottom: 1em;
 }
-.news-article{
-    margin:1.25em;
+.news-article {
+    margin: 1.25em;
     background-color: lightgray;
     padding-bottom: 1em;
     padding-top: 1em;
 }
-.news-article h5{
+.news-article h5 {
     color: #3232c4;
 }
-.news-article .info-desc{
+.news-article .info-desc {
     display: none;
 }
 
-.news-article:hover .info-desc{
+.news-article:hover .info-desc {
     display: block;
 }
 
-.special-img{
+.special-img {
     max-width: 100%;
-    width: 50%;
+    width: 30%;
+    height: 70px;
 }
-td{
+td {
     width: 32%;
 }
 
 h2 {
     text-align: center;
     font-size: 2em;
-    margin-top:0;
+    margin-top: 0;
     margin-bottom: 0.5em;
 }
-.nav-top{
+.nav-top {
     max-width: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-color:  #11A842;
 }
-.logo-login a{
-   color:white;
+.logo-login a {
+    color: white;
 }
-.logo-login li{
-    display:inline-block;
+.logo-login li {
+    display: inline-block;
     text-decoration: none;
     margin-left: 1em;
 }
@@ -275,9 +299,9 @@ body {
         display: none;
     }
 
-   td{
-       width: 50%;
-   }
+    td {
+        width: 50%;
+    }
 
     .card {
         padding-right: 1em;
@@ -294,20 +318,20 @@ body {
         left: 10%;
         font-size: 3em;
     }
-    td{
+    td {
         width: 100%;
     }
-    .special-img{
+    .special-img {
         width: 90%;
-    } 
+    }
 
-    .bio img, .presentation img {
+    .bio img,
+    .presentation img {
         width: 95%;
         margin-bottom: 2.5%;
         margin-right: 2.5%;
         float: left;
     }
-   
 
     .md-visible {
         display: none;

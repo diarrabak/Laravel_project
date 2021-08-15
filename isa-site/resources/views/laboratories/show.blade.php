@@ -15,5 +15,38 @@
     <p class="col-12">{{ $laboratory->description }}</p>
 </div>
 
+<div class="row">
+
+    <h2 class="col-12"> Equipment in {{ $laboratory->name }}</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th class="md-visible">Laboratory </th>
+                <th class="lg-visible">Description </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach($laboratory->equipments as $equipment)
+
+            <tr>
+                <td>
+                    <img class="special-img" src="/storage/images/{{ $equipment->picture  }}" alt='{{ $equipment->name }}' />
+                    <div>
+                        <a href="{{route('equipments.show',['equipment'=>$equipment])}}"> {{$equipment->name}}</a>
+                    </div>
+                </td>
+                <td class="md-visible"> <a href="{{route('laboratories.show',['laboratory'=>$equipment->laboratory])}}">{{$equipment->laboratory->name}}</a></td>
+                <td class="lg-visible">{{$laboratory->description}}</td>
+
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+</div>
+
 
 @endsection

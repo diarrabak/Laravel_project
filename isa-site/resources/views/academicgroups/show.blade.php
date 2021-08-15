@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -12,6 +11,7 @@
 <div class="row">
 
     <h2 class="col-12"> Members of the {{ $academicgroup->name }} group</h2>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -23,7 +23,12 @@
         <tbody>
             @foreach($academicgroup->users as $user)
             <tr>
-                <td><a href="{{route('users.show',['user'=>$user])}}"> {{$user->name}}</a></td>
+                <td>
+                    <img class="special-img" src="/storage/images/{{ $user->picture  }}" alt='{{ $user->name }}' />
+                    <div>
+                        <a href="{{route('users.show',['user'=>$user])}}"> {{$user->name}}</a>
+                    </div>
+                </td>
                 <td class="md-visible">{{$user->department->name}}</td>
                 <td class="lg-visible">{{$user->biography}}</td>
             </tr>

@@ -61,7 +61,7 @@
                     <div>
                         <a href="{{route('academicgroups.show',['academicgroup'=>$academicgroup])}}"> {{$academicgroup->name}}</a>
                     </div>
-
+                </td>
                 <td class="md-visible">{{$academicgroup->description}}</td>
                 <td class="lg-visible"> <a href="{{route('departments.show',['department'=>$academicgroup->department])}}">{{$academicgroup->department->name}}</a></td>
 
@@ -71,6 +71,35 @@
     </table>
 </div>
 
+<div class="row">
+
+    <h2 class="col-12"> Laboratories in {{ $department->name }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th class="lg-visible"> Description </th>
+                <th class="md-visible">Responsible </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($department->laboratories as $laboratory)
+            <tr>
+                <td>
+                    <img class="special-img" src="/storage/images/{{ $laboratory->picture  }}" alt='{{ $laboratory->name }}' />
+                    <div>
+                        <a href="{{route('laboratories.show',['laboratory'=>$laboratory])}}"> {{$laboratory->name}}</a>
+                    </div>
+                </td>
+                <td class="md-visible">{{$laboratory->description}}</td>
+                <td class="lg-visible"> <a href="{{route('users.show',['user'=>$laboratory->user])}}">{{$laboratory->user->name}}</a></td>
+               
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
 <div class="row">
 

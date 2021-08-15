@@ -13,6 +13,8 @@ use App\Http\Controllers\ResearchGroupController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\EquipmentController;
+use App\Http\Controllers\TestimonialController;
 
 
 /*
@@ -39,12 +41,6 @@ Route::get('/student',function(){
 });
 
 
-Route::get('/alumni',function(){
-    return view('frontpages.testimonial');
-});
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -60,4 +56,6 @@ Route::resource('researchgroups', ResearchgroupController::class);
 Route::resource('informations', InformationController::class);
 Route::resource('articles', ArticleController::class);
 Route::resource('roles', RoleController::class);
+Route::resource('equipments', EquipmentController::class);
+Route::resource('testimonials', TestimonialController::class);
 

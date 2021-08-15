@@ -88,7 +88,7 @@
     <article class="card col-sm-10 col-md-5 col-lg-4">
         <img class="card-img-top" src="/storage/images/alumni.jpg" alt='Alumni picture' />
         <div class="card-body">
-            <h5 class="card-title"><a href="{{ url('/alumni') }}"> Alumni</a></h5>
+            <h5 class="card-title"><a href="{{ route('testimonials.index') }}" > Alumni</a></h5>
 
         </div>
 

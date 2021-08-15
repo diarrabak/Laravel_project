@@ -28,4 +28,10 @@ class Laboratory extends Model
      {
          return $this->belongsTo(User::class);
      }
+
+      // An laboratory has many equipments
+      public function equipments()
+      {
+          return $this->hasMany(Equipment::class);
+      }
 }
