@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+@if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
 @section('buttons')
 <a class="btn btn-primary" href="{{ route('informations.create') }}" role="button">Add New information</a>
 @endsection
-
+@endif
 @section('content')
 
 <div class="header">
@@ -22,7 +22,7 @@
         <h5> {{ $information->title }} for {{ $information->department->name }}</h5>
         <p class="info-desc">{{$information->description}}</p>
         <p> <a class="btn btn-success" href="/storage/images/{{ $information->document  }}" download> Download</a> </p>
-
+        @if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
         <div class="row">
 
             <div class="col-12 col-sm-4">
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-
+@endif
 
     </article>
 

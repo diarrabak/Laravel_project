@@ -16,7 +16,6 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\TestimonialController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +35,18 @@ use App\Http\Controllers\TestimonialController;
 
 Route::get('/', [DepartmentController::class, 'homepage']);
 
-Route::get('/student',function(){
+/*Route::get('/', function () {
+
+    if (!empty(session('email'))) {
+        $user=User::where('email',session('email'))->get();
+        session(['name' => $user->name]);
+        session(['role' => $user->role]);
+    }
+
+    return view('frontpages.homepage');
+});*/
+
+Route::get('/student', function () {
     return view('frontpages.student');
 });
 
@@ -58,4 +68,3 @@ Route::resource('articles', ArticleController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('equipments', EquipmentController::class);
 Route::resource('testimonials', TestimonialController::class);
-

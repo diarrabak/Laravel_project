@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+
 @section('buttons')
 <a class="btn btn-primary" href="{{ route('testimonials.create') }}" role="button">Leave a testimonial</a>
 @endsection
+
 
 @section('content')
 <h1 class="main-title">Testimonials from alumni</h1>
@@ -19,7 +21,7 @@
             <img class="rounded-circle" src="/storage/images/{{ $testimonial->picture  }}" alt='{{ $testimonial->picture  }}' />
             <h5 class="card-title"><a href="{{ route('testimonials.show', ['testimonial' => $testimonial->id]) }}"> {{ $testimonial->name }} </a></h5>
         </div>
-
+        @if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
         <div class="row">
 
             <div class="col-12 col-sm-2 offset-sm-4">
@@ -37,7 +39,7 @@
             </div>
         </div>
 
-
+        @endif
 
     </article>
 

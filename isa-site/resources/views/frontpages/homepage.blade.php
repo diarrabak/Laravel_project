@@ -1,13 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="header">
     <img class="department-image home-page" src="/storage/images/doSRplUaMEZvGtbU6xU6Nu2T0j9v0YHuaPV5lmBy.jpg" alt='home page image' />
 
     <h1 class="department depart-header front">Welcome to ISA Mali</h1>
     <p class="department depart-desc">Hello</p>
 </div>
+<div>
+    <p> Here {{session('email')}}</p>
+    <p> Here {{session('name')}}</p>
+    @if(null!==session('roles') && count(session('roles'))>=1)
+     @for($i=0; $i< count(session('roles')); $i++)
+    <p> Here {{session('roles')[$i]}}</p>
+    @endfor
+    @endif
+   
 
+</div>
 <article class="presentation">
     <h2 class="col-12">Welcome message from Prof Kone, the director</h2>
     <img src="/storage/images/niGhc5Bqgtm1EFCSQOQP2PGrmVMuhTQ8Pz3m0tSh.jpg" alt='Picture of the director' />
@@ -26,7 +37,6 @@
 <div class="row">
 
     <h2 class="col-12"> Discover our institute</h2>
-
 
     <article class="card col-sm-10 col-md-5 col-lg-4">
         <img class="card-img-top" src="/storage/images/2p8Xu5knOY2D7rLGNc9JP6Zk2WzmS4kUKY3dPSe1.jpg" alt='Departments' />
@@ -88,7 +98,7 @@
     <article class="card col-sm-10 col-md-5 col-lg-4">
         <img class="card-img-top" src="/storage/images/alumni.jpg" alt='Alumni picture' />
         <div class="card-body">
-            <h5 class="card-title"><a href="{{ route('testimonials.index') }}" > Alumni</a></h5>
+            <h5 class="card-title"><a href="{{ route('testimonials.index') }}"> Alumni</a></h5>
 
         </div>
 

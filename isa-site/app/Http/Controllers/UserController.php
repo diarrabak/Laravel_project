@@ -18,6 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
+       
         //We can get all users with User::get() or we can use the paginate function specify the number of objects per page
         $users = User::paginate(20);  //Get all users (20 per page)
         return view('users.index')

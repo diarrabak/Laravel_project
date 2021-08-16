@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('buttons')
+@if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
 <a class="btn btn-primary" href="{{ route('departments.create') }}" role="button">Add New department</a>
+@endif
 @endsection
 
 @section('content')
@@ -16,6 +18,7 @@
             <h5 class="card-title"><a href="{{ route('departments.show', ['department' => $department->id]) }}"> {{ $department->name }} </a></h5>
 
         </div>
+        @if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
         <div class="row">
             <!--div class="col-12 col-sm-4">
                 <a class="btn btn-success" href="{{ route('departments.show', ['department' => $department->id]) }}" alt="View" title="View">
@@ -36,6 +39,7 @@
                 </form>
             </div>
         </div>
+        @endif
 
 
 

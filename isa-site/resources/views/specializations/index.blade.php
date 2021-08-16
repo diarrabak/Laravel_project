@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+@if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
 @section('buttons')
 <a class="btn btn-primary" href="{{ route('specializations.create') }}" role="button">Add New specialization</a>
 @endsection
+@endif
 
 @section('content')
 <table class="table">
@@ -26,6 +28,7 @@
                 <td>{{ $specialization->user->name }} </td>
                 <td>{{ $specialization->department->name }}  </td>
                 <td class="actions">
+                @if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
                 <a
                         href="{{ route('specializations.show', ['specialization' => $specialization->id]) }}"
                         alt="View"
@@ -43,7 +46,7 @@
                         @csrf
                         <button type="submit" class="btn btn-link" title="Delete" value="DELETE">Delete</button>
                     </form>
-
+@endif
                 </td>
             </tr>
         @empty

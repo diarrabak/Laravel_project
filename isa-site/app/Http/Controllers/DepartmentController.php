@@ -6,6 +6,8 @@ use App\Models\Department;
 use App\Models\Laboratory;
 use Illuminate\Http\Request;
 
+use App\Models\User;
+
 class DepartmentController extends Controller
 {
     /**
