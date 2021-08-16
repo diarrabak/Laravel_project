@@ -8,7 +8,7 @@
     <h1 class="department depart-header front">Welcome to ISA Mali</h1>
     <p class="department depart-desc">Hello</p>
 </div>
-<div>
+<!--div>
     <p> Here {{session('email')}}</p>
     <p> Here {{session('name')}}</p>
     @if(null!==session('roles') && count(session('roles'))>=1)
@@ -16,9 +16,8 @@
     <p> Here {{session('roles')[$i]}}</p>
     @endfor
     @endif
-   
 
-</div>
+</div-->
 <article class="presentation">
     <h2 class="col-12">Welcome message from Prof Kone, the director</h2>
     <img src="/storage/images/niGhc5Bqgtm1EFCSQOQP2PGrmVMuhTQ8Pz3m0tSh.jpg" alt='Picture of the director' />
