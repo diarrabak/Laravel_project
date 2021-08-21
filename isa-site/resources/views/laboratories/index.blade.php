@@ -41,6 +41,7 @@
 
 
     @empty
+    <p class="col-12">No labs available!</p>
     @endforelse
 
 </div>

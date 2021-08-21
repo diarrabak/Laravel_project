@@ -23,13 +23,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($specialization->courses as $course)
+            @forelse($specialization->courses as $course)
             <tr>
                 <td><a href="{{route('courses.show',['course'=>$course])}}"> {{$course->title}}</a></td>
                 <td class="md-visible">{{$course->description}}</td>
                 <td class="lg-visible">{{$course->semester}}</td>
             </tr>
-            @endforeach
+            @empty
+            <p class="col-12">No courses in {{ $specialization->name }}</p>
+            @endforelse
         </tbody>
     </table>
 </div>

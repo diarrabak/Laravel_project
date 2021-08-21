@@ -29,7 +29,7 @@
         </thead>
         <tbody>
 
-            @foreach($laboratory->equipments as $equipment)
+            @forelse($laboratory->equipments as $equipment)
 
             <tr>
                 <td>
@@ -42,7 +42,12 @@
                 <td class="lg-visible">{{$laboratory->description}}</td>
 
             </tr>
-            @endforeach
+            @empty
+            <tr>
+                <td class="color-red">No equipment in {{ $laboratory->name }} lab</td>
+
+            </tr>
+            @endforelse
         </tbody>
     </table>
 

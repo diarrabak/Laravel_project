@@ -42,6 +42,7 @@
 
 
     @empty
+    <p class="col-12">No equipment available!</p>
     @endforelse
 
 </div>

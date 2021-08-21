@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($academicgroup->users as $user)
+            @forelse($academicgroup->users as $user)
             <tr>
                 <td>
                     <img class="special-img" src="/storage/images/{{ $user->picture  }}" alt='{{ $user->name }}' />
@@ -32,7 +32,9 @@
                 <td class="md-visible">{{$user->department->name}}</td>
                 <td class="lg-visible">{{$user->biography}}</td>
             </tr>
-            @endforeach
+            @empty
+            <p class="col-12"> No user available in {{$academicgroup->name }}!</p>
+            @endforelse
         </tbody>
     </table>
 </div>

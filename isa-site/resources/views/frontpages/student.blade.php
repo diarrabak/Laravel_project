@@ -9,7 +9,7 @@
 
 </div>
 
-<h2>Who can apply?</h2>
+<h2 class="apply">Who can apply?</h2>
 <div class="row">
     <p class="col-12">
         Admission to the ISA is by selection. The following candidates are accepted:
@@ -44,8 +44,8 @@
 </div>
 <div class="row documents">
 
-    <div class="col-12 col-md-6">
-        <h3>Documents for local students</h2>
+    <div class="col-12 ">
+        <h2>Documents for local students</h2>
 
         <ul>
             <li>
@@ -69,8 +69,8 @@
             </li>
         </ul>
     </div>
-    <div class="col-12 col-md-6">
-        <h3> Documents for International students</h2>
+    <div class="col-12">
+        <h2> Documents for International students</h2>
 
         <ul>
             <li>

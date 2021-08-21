@@ -23,7 +23,7 @@
         </thead>
         <tbody>
 
-            @foreach($department->specializations as $specialization)
+            @forelse($department->specializations as $specialization)
 
             <tr>
                 <td>
@@ -36,7 +36,9 @@
                 <td class="lg-visible">{{$specialization->description}}</td>
 
             </tr>
-            @endforeach
+            @empty
+            <p> No specializations in {{ $department->name }}</p>
+            @endforelse
         </tbody>
     </table>
 
@@ -54,7 +56,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($department->academicgroups as $academicgroup)
+            @forelse($department->academicgroups as $academicgroup)
             <tr>
                 <td>
                     <img class="special-img" src="/storage/images/{{ $academicgroup->picture  }}" alt='{{ $academicgroup->name }}' />
@@ -66,7 +68,9 @@
                 <td class="lg-visible"> <a href="{{route('departments.show',['department'=>$academicgroup->department])}}">{{$academicgroup->department->name}}</a></td>
 
             </tr>
-            @endforeach
+            @empty
+            <p> No academic groups in {{ $department->name }}</p>
+            @endforelse
         </tbody>
     </table>
 </div>
@@ -84,7 +88,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($department->laboratories as $laboratory)
+            @forelse($department->laboratories as $laboratory)
             <tr>
                 <td>
                     <img class="special-img" src="/storage/images/{{ $laboratory->picture  }}" alt='{{ $laboratory->name }}' />
@@ -96,7 +100,9 @@
                 <td class="lg-visible"> <a href="{{route('users.show',['user'=>$laboratory->user])}}">{{$laboratory->user->name}}</a></td>
                
             </tr>
-            @endforeach
+            @empty
+            <p> No laboratories in {{ $department->name }}</p>
+            @endforelse
         </tbody>
     </table>
 </div>
@@ -112,12 +118,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($department->jobopenings as $jobopening)
+            @forelse($department->jobopenings as $jobopening)
             <tr>
                 <td><a href="{{route('jobopenings.show',['jobopening'=>$jobopening])}}"> {{$jobopening->name}}</a></td>
                 <td class="md-visible">{{$jobopening->description}}</td>
             </tr>
-            @endforeach
+            @empty
+            <p class="col-12"> No career specified for {{ $department->name }}</p>
+            @endforelse
         </tbody>
     </table>
 </div>

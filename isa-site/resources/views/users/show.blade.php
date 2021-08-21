@@ -38,11 +38,12 @@
         <h4 class="col-sm-12"> My publications</h4>
         <ul>
 
-            @foreach($user->articles as $article)
+            @forelse($user->articles as $article)
 
             <li>{{$article->title}}</li>
-
-            @endforeach
+            @empty
+            <p class="col-12">No articles for {{$user->title}} {{$user->name}}</p>
+            @endforelse
         </ul>
         <p class="col-sm-12"><a href="mailto:{{$user->email}}" class="btn btn-primary">Contact me!</a></p>
     </div>

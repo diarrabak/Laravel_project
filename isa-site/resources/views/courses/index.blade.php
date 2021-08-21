@@ -45,6 +45,7 @@
             </td>
         </tr>
         @empty
+        <p class="col-12"> No courses available!</p>
         @endforelse
     </tbody>
 </table>

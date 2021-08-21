@@ -59,11 +59,19 @@
             <li>
               <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
               </form>
             </li>
+
           </ul>
+
         </div>
+
+        @if(!empty(session('name')) )
+        <div class="current-user">
+          Welcome back {{session('name')}}
+        </div>
+        @endif
       </div>
     </div>
 
@@ -78,7 +86,7 @@
           <li><a class="nav-link" href="{{ route('departments.index') }}">{{ __('Faculties') }}</a></li>
           <li><a class="nav-link" href="{{ route('laboratories.index') }}">{{ __('Laboratories') }}</a></li>
           <li><a class="nav-link" href="{{ url('/student') }}">{{ __('Students') }}</a></li>
-          <li><a class="nav-link" href="{{ route('testimonials.index') }}" >{{ __('Alumni') }}</a></li>
+          <li><a class="nav-link" href="{{ route('testimonials.index') }}">{{ __('Alumni') }}</a></li>
           <li><a class="nav-link" href="{{ route('informations.index') }}">{{ __('News') }}</a></li>
         </ul>
 
@@ -102,8 +110,47 @@
   <!-- FOOTER -->
   <footer class="container">
     <div class="row">
-      <p class="float-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2021, Diarra. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+      <div class="col-md-4">
+        <h3>Contact</h3>
+        <p>
+          Téléphone: (223) 20 22 44 21
+        </p>
+        <p>
+          Email: <a href="mailto:contact@isamali.ml">contact@isamali.ml</a>
+        </p>
+      </div>
+
+      <ul class="col-md-4">
+        <li>
+          <a href="{{ route('departments.index') }}">{{ __('Faculties') }}</a>
+        </li>
+        <li>
+          <a href="{{ route('laboratories.index') }}">{{ __('Laboratories') }}</a>
+        </li>
+        <li>
+          <a href="{{ route('informations.index') }}">{{ __('News') }}</a>
+        </li>
+      </ul>
+
+      <ul class="col-md-4">
+
+        <li>
+          <a href="{{ route('testimonials.index') }}">{{ __('Alumni') }}</a>
+        </li>
+
+        <li>
+          <a href="{{ url('/student') }}">{{ __('Students') }}</a>
+        </li>
+        <li>
+          <a href="{{ url('/login') }}">{{ __('Login') }}</a>
+        </li>
+
+      </ul>
+
+      <div class="offset-sm-4 col-12">
+        <p>&copy; 2021, Diarra.</p>
+      </div>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

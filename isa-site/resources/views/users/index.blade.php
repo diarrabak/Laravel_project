@@ -39,6 +39,7 @@
     </article>
 
     @empty
+    <p class="col-12">No users in the table!</p>
     @endforelse
 </div>
 @endsection

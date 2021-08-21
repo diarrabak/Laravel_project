@@ -40,12 +40,13 @@
             </div>
         </div>
 
-@endif
+        @endif
 
     </article>
 
 
     @empty
+    <p class="col-12">No information available for now!</p>
     @endforelse
 
 </div>

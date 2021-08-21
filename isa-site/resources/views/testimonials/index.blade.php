@@ -45,6 +45,7 @@
 
 
     @empty
+    <p class="col-12">No testimonials available!</p>
     @endforelse
 
 </div>

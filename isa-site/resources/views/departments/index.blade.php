@@ -20,11 +20,7 @@
         </div>
         @if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
         <div class="row">
-            <!--div class="col-12 col-sm-4">
-                <a class="btn btn-success" href="{{ route('departments.show', ['department' => $department->id]) }}" alt="View" title="View">
-                    Details
-                </a>
-            </div-->
+           
             <div class="col-12 col-sm-4">
                 <a class="btn btn-primary" href="{{ route('departments.edit', ['department' => $department->id]) }}" alt="Edit" title="Edit">
                     Edit
@@ -47,6 +43,7 @@
 
 
     @empty
+    <p class="col-12"> No departments available!</p>
     @endforelse
 
 </div>
