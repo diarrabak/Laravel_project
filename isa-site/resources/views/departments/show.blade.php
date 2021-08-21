@@ -13,7 +13,7 @@
 
     <h2 class="col-12"> Specializations in {{ $department->name }}</h2>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Field</th>
@@ -47,7 +47,7 @@
 <div class="row">
 
     <h2 class="col-12"> Academic groups in {{ $department->name }}</h2>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Group</th>
@@ -69,7 +69,13 @@
 
             </tr>
             @empty
-            <p> No academic groups in {{ $department->name }}</p>
+
+            <tr>
+                <td class="no-data">
+                    No academic groups in {{ $department->name }}
+                </td>
+            </tr>
+
             @endforelse
         </tbody>
     </table>
@@ -78,13 +84,13 @@
 <div class="row">
 
     <h2 class="col-12"> Laboratories in {{ $department->name }}</h2>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
                 <th class="lg-visible"> Description </th>
                 <th class="md-visible">Responsible </th>
-                
+
             </tr>
         </thead>
         <tbody>
@@ -98,10 +104,15 @@
                 </td>
                 <td class="md-visible">{{$laboratory->description}}</td>
                 <td class="lg-visible"> <a href="{{route('users.show',['user'=>$laboratory->user])}}">{{$laboratory->user->name}}</a></td>
-               
+
             </tr>
             @empty
-            <p> No laboratories in {{ $department->name }}</p>
+
+            <tr>
+                <td class="no-data">
+                    No laboratories in {{ $department->name }}
+                </td>
+            </tr>
             @endforelse
         </tbody>
     </table>
@@ -110,7 +121,7 @@
 <div class="row">
 
     <h2 class="col-12"> Career path in {{ $department->name }}</h2>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Job title</th>
@@ -124,7 +135,13 @@
                 <td class="md-visible">{{$jobopening->description}}</td>
             </tr>
             @empty
-            <p class="col-12"> No career specified for {{ $department->name }}</p>
+
+            <tr>
+                <td class="no-data">
+                    No career specified for {{ $department->name }}
+                </td>
+            </tr>
+
             @endforelse
         </tbody>
     </table>

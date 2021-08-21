@@ -22,7 +22,7 @@
             <div class="row">
                 <!--a class="btn btn-success" href="{{ route('users.show', ['user' => $user->id]) }}"> See more </a-->
                 <div class="col-12 col-sm-4">
-                    <a  class="btn btn-primary" href="{{ route('users.edit', ['user' => $user->id]) }}" alt="Edit" title="Edit">
+                    <a class="btn btn-primary" href="{{ route('users.edit', ['user' => $user->id]) }}" alt="Edit" title="Edit">
                         Edit
                     </a>
                 </div>
@@ -39,7 +39,7 @@
     </article>
 
     @empty
-    <p class="col-12">No users in the table!</p>
+    <p class="col-12 no-data">No users in the table!</p>
     @endforelse
 </div>
 @endsection

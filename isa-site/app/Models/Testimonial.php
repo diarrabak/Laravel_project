@@ -9,10 +9,10 @@ class Testimonial extends Model
 {
     use HasFactory;
     protected $fillable = [
-    	'title',
-    	'comment',
+        'title',
+        'comment',
         'name',
-    	'picture',
+        'picture',
     ];
     public $timestamps = false;
 }

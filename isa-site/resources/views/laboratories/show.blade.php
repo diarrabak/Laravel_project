@@ -19,7 +19,7 @@
 
     <h2 class="col-12"> Equipment in {{ $laboratory->name }}</h2>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
@@ -44,7 +44,7 @@
             </tr>
             @empty
             <tr>
-                <td class="color-red">No equipment in {{ $laboratory->name }} lab</td>
+                <td class="no-data">No equipment in {{ $laboratory->name }} lab</td>
 
             </tr>
             @endforelse

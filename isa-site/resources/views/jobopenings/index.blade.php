@@ -6,7 +6,7 @@
 @endif
 
 @section('content')
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -40,7 +40,13 @@
             </td>
         </tr>
         @empty
-        <p class="col-12">No opportunities available!</p>
+
+        <tr>
+            <td class="no-data">
+                No opportunities available!
+            </td>
+        </tr>
+
         @endforelse
     </tbody>
 </table>

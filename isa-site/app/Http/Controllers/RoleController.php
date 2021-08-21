@@ -15,10 +15,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles=Role::get();
-        return view('roles.index',compact('roles'));
-
-
+        $roles = Role::get();
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -28,11 +26,10 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $users=User::get()->pluck('name','id');
+        $users = User::get()->pluck('name', 'id');
         return view('roles.create')
-         ->with('users',$users)
-         ->with('role',(new Role()));
-
+            ->with('users', $users)
+            ->with('role', (new Role()));
     }
 
     /**
@@ -43,7 +40,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $role=Role::create($request->input());
+        $role = Role::create($request->input());
         $role->users()->attach($request->get('users'));
     }
 
@@ -66,18 +63,17 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $users=User::get()->pluck('name','id');
-        $currentUsers=$role->users;
-        $Ids=[];
-        foreach($currentUsers as $user){
-            $ids[]=$user->id;
+        $users = User::get()->pluck('name', 'id');
+        $currentUsers = $role->users;
+        $Ids = [];
+        foreach ($currentUsers as $user) {
+            $ids[] = $user->id;
         }
 
         return view('roles.edit')
-          ->with('users',$users)
-          ->with('ids',$ids)
-          ->with('role',$role);
-
+            ->with('users', $users)
+            ->with('ids', $ids)
+            ->with('role', $role);
     }
 
     /**
@@ -89,14 +85,14 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-         //Transfer the form data to the current role
-         $role->fill($request->input());
-         //Save the user and go to index page
-         $role->save();
-         $role->users()->detach();
-         $role->users()->attach($request->get('users'));
+        //Transfer the form data to the current role
+        $role->fill($request->input());
+        //Save the user and go to index page
+        $role->save();
+        $role->users()->detach();
+        $role->users()->attach($request->get('users'));
 
-         return redirect()->action([RoleController::class,'index']);
+        return redirect()->action([RoleController::class, 'index']);
     }
 
     /**
@@ -108,6 +104,6 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         Role::where('id', $role->id)->delete();
-        return redirect()->action([RoleController::class,'index']);
+        return redirect()->action([RoleController::class, 'index']);
     }
 }

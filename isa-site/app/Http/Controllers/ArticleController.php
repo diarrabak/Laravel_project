@@ -15,9 +15,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles=Article::get();
+        $articles = Article::get();
         return view('articles.index', compact('articles'));
-
     }
 
     /**
@@ -27,10 +26,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $users=User::get()->pluck('name','id');
+        $users = User::get()->pluck('name', 'id');
         return view('articles.create')
-          ->with('users',$users)
-          ->with('article',(new Article()));
+            ->with('users', $users)
+            ->with('article', (new Article()));
     }
 
     /**
@@ -42,8 +41,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         Article::create($request->input());
-        
-        return redirect()->action([ArticleController::class,'index']);
+
+        return redirect()->action([ArticleController::class, 'index']);
     }
 
     /**
@@ -65,12 +64,12 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        $users=User::get()->pluck('name','id');
-        $user=$article->user;
+        $users = User::get()->pluck('name', 'id');
+        $user = $article->user;
         return view('articles.edit')
-        ->with('article',$article)
-        ->with('users',$users)
-        ->with('user',$user);
+            ->with('article', $article)
+            ->with('users', $users)
+            ->with('user', $user);
     }
 
     /**
@@ -84,7 +83,7 @@ class ArticleController extends Controller
     {
         $article->fill($request->input());
         $article->save();
-        return redirect()->action([ArticleController::class,'index']);
+        return redirect()->action([ArticleController::class, 'index']);
     }
 
     /**
@@ -96,6 +95,6 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         Article::where('id', $article->id)->delete();
-        return redirect()->action([ArticleController::class,'index']);
+        return redirect()->action([ArticleController::class, 'index']);
     }
 }

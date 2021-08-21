@@ -9,8 +9,8 @@ class Academicgroup extends Model
 {
     use HasFactory;
     protected $fillable = [
-    	'name',
-    	'description',
+        'name',
+        'description',
         'picture',
         'department_id',
     ];

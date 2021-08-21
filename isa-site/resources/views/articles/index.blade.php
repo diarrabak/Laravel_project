@@ -45,7 +45,12 @@
             </td>
         </tr>
         @empty
-        <p class="col-12"> No articles available! </p>
+
+        <tr>
+            <td class="no-data">
+                No articles available!
+            </td>
+        </tr>
         @endforelse
     </tbody>
 </table>

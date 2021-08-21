@@ -3,7 +3,7 @@
 @section('buttons')
 <a class="btn btn-primary" href="{{ route('laboratories.create') }}" role="button">Add New laboratory</a>
 @endsection
-@endif 
+@endif
 
 @section('content')
 
@@ -21,7 +21,7 @@
         </div>
         @if(!empty(session('email')) && in_array(strtolower('admin'), session('roles')))
         <div class="row">
-           
+
             <div class="col-12 col-sm-4">
                 <a class="btn btn-primary" href="{{ route('laboratories.edit', ['laboratory' => $laboratory->id]) }}" alt="Edit" title="Edit">
                     Edit
@@ -41,7 +41,12 @@
 
 
     @empty
-    <p class="col-12">No labs available!</p>
+
+    <p class="no-data">
+        No labs available!
+    </p>
+
+
     @endforelse
 
 </div>

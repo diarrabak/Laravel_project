@@ -11,7 +11,7 @@ class Course extends Model
     protected $fillable = [
         'code',
         'title',
-    	'description',
+        'description',
         'semester',
         'specialization_id',
         'department_id',
@@ -19,12 +19,12 @@ class Course extends Model
     public $timestamps = false;
 
     public function department()
-     {
-         return $this->belongsTo(Department::class);
-     }
+    {
+        return $this->belongsTo(Department::class);
+    }
 
-     public function specialization()
-     {
-         return $this->belongsTo(Specialization::class);
-     }
+    public function specialization()
+    {
+        return $this->belongsTo(Specialization::class);
+    }
 }

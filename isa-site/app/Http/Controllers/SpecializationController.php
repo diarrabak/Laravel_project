@@ -19,8 +19,8 @@ class SpecializationController extends Controller
      */
     public function index()
     {
-        $specializations=Specialization::get();
-        return view('specializations.index',compact('specializations'));
+        $specializations = Specialization::get();
+        return view('specializations.index', compact('specializations'));
     }
 
     /**
@@ -59,7 +59,7 @@ class SpecializationController extends Controller
 
         $specialization->save(); // Finally, save the record.
 
-        return redirect()->action([SpecializationController::class,'index']);
+        return redirect()->action([SpecializationController::class, 'index']);
     }
 
     /**
@@ -70,7 +70,7 @@ class SpecializationController extends Controller
      */
     public function show(Specialization $specialization)
     {
-        return view('specializations.show',compact('specialization'));
+        return view('specializations.show', compact('specialization'));
     }
 
     /**
@@ -104,9 +104,9 @@ class SpecializationController extends Controller
     {
         $request->picture->store('images', 'public');
         $specialization->fill($request->input());
-        $specialization->picture= $request->picture->hashName();
+        $specialization->picture = $request->picture->hashName();
         $specialization->save();
-        return redirect()->action([SpecializationController::class,'index']);
+        return redirect()->action([SpecializationController::class, 'index']);
     }
 
     /**
@@ -118,6 +118,6 @@ class SpecializationController extends Controller
     public function destroy(Specialization $specialization)
     {
         Specialization::where('id', $specialization->id)->delete();
-        return redirect()->action([SpecializationController::class,'index']);
+        return redirect()->action([SpecializationController::class, 'index']);
     }
 }

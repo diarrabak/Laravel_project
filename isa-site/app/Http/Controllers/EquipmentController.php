@@ -74,7 +74,7 @@ class EquipmentController extends Controller
     public function edit(Equipment $equipment)
     {
         $laboratory = $equipment->laboratory;
-        $laboratories=Laboratory::get()->pluck('name','id');
+        $laboratories = Laboratory::get()->pluck('name', 'id');
         return view('equipments.edit')
             ->with('laboratory', $laboratory)
             ->with('laboratories', $laboratories)

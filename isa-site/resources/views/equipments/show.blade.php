@@ -7,7 +7,7 @@
 
     <h2 class="col-12"> Details about {{ $equipment->name }}</h2>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>

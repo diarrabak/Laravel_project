@@ -11,7 +11,7 @@ class Article extends Model
 
     protected $fillable = [
         'title',
-    	'link',
+        'link',
         'authors',
         'publication',
         'year',
@@ -19,8 +19,8 @@ class Article extends Model
     ];
     public $timestamps = false;
 
-     public function user()
-     {
-         return $this->belongsTo(User::class);
-     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

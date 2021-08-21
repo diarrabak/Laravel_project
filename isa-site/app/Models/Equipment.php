@@ -10,17 +10,16 @@ class Equipment extends Model
     use HasFactory;
 
     protected $fillable = [
-    	'name',
-    	'description',
-    	'picture',
+        'name',
+        'description',
+        'picture',
         'laboratory_id',
     ];
     public $timestamps = false;
 
-     //An equipment belongs to a laboratory
-     public function laboratory()
-     {
-         return $this->belongsTo(Laboratory::class);
-     }
-
+    //An equipment belongs to a laboratory
+    public function laboratory()
+    {
+        return $this->belongsTo(Laboratory::class);
+    }
 }

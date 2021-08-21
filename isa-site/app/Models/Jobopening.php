@@ -9,15 +9,15 @@ class Jobopening extends Model
 {
     use HasFactory;
     protected $fillable = [
-    	'name',
-    	'description',
+        'name',
+        'description',
         'department_id',
     ];
     public $timestamps = false;
 
-     //An opening belongs to a department
-     public function department()
-     {
-         return $this->belongsTo(Department::class);
-     }
+    //An opening belongs to a department
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }

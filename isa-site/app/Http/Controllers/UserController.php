@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
+
         //We can get all users with User::get() or we can use the paginate function specify the number of objects per page
         $users = User::paginate(20);  //Get all users (20 per page)
         return view('users.index')
@@ -32,14 +32,14 @@ class UserController extends Controller
      */
     public function create()
     {
-        $departments=Department::get()->pluck('name', 'id'); //Choose all departments in pairs of name and id
-        $academicgroups=Academicgroup::get()->pluck('name', 'id');
-        $roles=Role::get()->pluck('name', 'id');
-       return view('users.create')
-       ->with('departments',$departments)
-       ->with('roles',$roles)
-       ->with('academicgroups',$academicgroups)
-       ->with('user', (new User()));
+        $departments = Department::get()->pluck('name', 'id'); //Choose all departments in pairs of name and id
+        $academicgroups = Academicgroup::get()->pluck('name', 'id');
+        $roles = Role::get()->pluck('name', 'id');
+        return view('users.create')
+            ->with('departments', $departments)
+            ->with('roles', $roles)
+            ->with('academicgroups', $academicgroups)
+            ->with('user', (new User()));
     }
 
     /**
@@ -69,7 +69,7 @@ class UserController extends Controller
         $user->save(); // Finally, save the user.
         $user->roles()->attach($request->get('roles'));
 
-        return redirect()->action([UserController::class,'index']); //Redirect to the index page
+        return redirect()->action([UserController::class, 'index']); //Redirect to the index page
     }
 
     /**
@@ -93,29 +93,29 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //Get all departments and academic groups in key pairs of name and id
-        $departments=Department::get()->pluck('name', 'id');
-        $academicgroups=Academicgroup::get()->pluck('name', 'id');
-        $roles=Role::get()->pluck('name', 'id');
-        $currentRoles=$user->roles;
-        $ids=[];
-        foreach($currentRoles as $role){
-         $ids[]=$role->id;
+        $departments = Department::get()->pluck('name', 'id');
+        $academicgroups = Academicgroup::get()->pluck('name', 'id');
+        $roles = Role::get()->pluck('name', 'id');
+        $currentRoles = $user->roles;
+        $ids = [];
+        foreach ($currentRoles as $role) {
+            $ids[] = $role->id;
         }
         //Get the group of the current user to automatically select  
         $academicgroup = $user->academicgroup;
 
-         //Get the department of the current user to automatically select  
+        //Get the department of the current user to automatically select  
         $department = $user->department;
         // The above data are sent to the edit view
         return view('users.edit')
-        ->with('department', $department)
-        ->with('academicgroups', $academicgroups)
-        ->with('departments', $departments)
-        ->with('roles', $roles)
-        ->with('ids', $ids)
-        ->with('departments', $departments)
-        ->with('academicgroup', $academicgroup)
-        ->with('user', $user);
+            ->with('department', $department)
+            ->with('academicgroups', $academicgroups)
+            ->with('departments', $departments)
+            ->with('roles', $roles)
+            ->with('ids', $ids)
+            ->with('departments', $departments)
+            ->with('academicgroup', $academicgroup)
+            ->with('user', $user);
     }
 
     /**
@@ -132,13 +132,13 @@ class UserController extends Controller
         //Transfer the form data to the current user
         $user->fill($request->input());
         //Replace the picture field of the user by the path of the new picture
-        $user->picture= $request->picture->hashName();
+        $user->picture = $request->picture->hashName();
         //Save the user and go to index page
         $user->save();
         $user->roles()->detach();
         $user->roles()->attach($request->get('roles'));
 
-        return redirect()->action([UserController::class,'index']);
+        return redirect()->action([UserController::class, 'index']);
     }
 
     /**
@@ -150,6 +150,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         User::where('id', $user->id)->delete();
-        return redirect()->action([UserController::class,'index']);
+        return redirect()->action([UserController::class, 'index']);
     }
 }

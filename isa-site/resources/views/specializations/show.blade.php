@@ -30,7 +30,11 @@
                 <td class="lg-visible">{{$course->semester}}</td>
             </tr>
             @empty
-            <p class="col-12">No courses in {{ $specialization->name }}</p>
+            <tr>
+                <td class="no-data">No courses in {{ $specialization->name }}</td>
+
+            </tr>
+
             @endforelse
         </tbody>
     </table>

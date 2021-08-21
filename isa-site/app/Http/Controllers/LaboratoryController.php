@@ -18,7 +18,7 @@ class LaboratoryController extends Controller
      */
     public function index()
     {
-        $labs=Laboratory::get();
+        $labs = Laboratory::get();
         return view('laboratories.index', compact('labs'));
     }
 
@@ -56,7 +56,7 @@ class LaboratoryController extends Controller
 
         $laboratory->save(); // Finally, save the record.
 
-        return redirect()->action([LaboratoryController::class,'index']);
+        return redirect()->action([LaboratoryController::class, 'index']);
     }
 
     /**
@@ -101,9 +101,9 @@ class LaboratoryController extends Controller
     {
         $request->picture->store('images', 'public');
         $laboratory->fill($request->input());
-        $laboratory->picture= $request->picture->hashName();
+        $laboratory->picture = $request->picture->hashName();
         $laboratory->save();
-        return redirect()->action([LaboratoryController::class,'index']);
+        return redirect()->action([LaboratoryController::class, 'index']);
     }
 
     /**
@@ -115,6 +115,6 @@ class LaboratoryController extends Controller
     public function destroy(Laboratory $laboratory)
     {
         Laboratory::where('id', $laboratory->id)->delete();
-        return redirect()->action([LaboratoryController::class,'index']);
+        return redirect()->action([LaboratoryController::class, 'index']);
     }
 }

@@ -9,9 +9,9 @@ class ResearchGroup extends Model
 {
     use HasFactory;
     protected $fillable = [
-    	'name',
-    	'description',
-    	'picture',
+        'name',
+        'description',
+        'picture',
         'department_id',
     ];
     public $timestamps = false;
@@ -25,6 +25,4 @@ class ResearchGroup extends Model
     {
         return $this->hasMany(User::class);
     }
-
-
 }

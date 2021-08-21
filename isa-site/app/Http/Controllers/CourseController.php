@@ -18,7 +18,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses=Course::get();
+        $courses = Course::get();
         return view('courses.index', compact('courses'));
     }
 
@@ -29,13 +29,13 @@ class CourseController extends Controller
      */
     public function create()
     {
-        $specializations=Specialization::get()->pluck('name','id');
-        $departments=Department::get()->pluck('name','id');
+        $specializations = Specialization::get()->pluck('name', 'id');
+        $departments = Department::get()->pluck('name', 'id');
 
         return view('courses.create')
-        ->with('specializations',$specializations)
-        ->with('departments',$departments)
-        ->with('course',(new Course()));
+            ->with('specializations', $specializations)
+            ->with('departments', $departments)
+            ->with('course', (new Course()));
     }
 
     /**
@@ -47,7 +47,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         Course::create($request->input());
-        return redirect()->action([CourseController::class,'index']);
+        return redirect()->action([CourseController::class, 'index']);
     }
 
     /**
@@ -59,7 +59,7 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         return view('courses.show')
-        ->with('course',$course);
+            ->with('course', $course);
     }
 
     /**
@@ -70,17 +70,17 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        $specializations=Specialization::get()->pluck('name','id');
-        $departments=Department::get()->pluck('name','id');
-        $specialization=$course->specialization;
-        $department=$course->department;
+        $specializations = Specialization::get()->pluck('name', 'id');
+        $departments = Department::get()->pluck('name', 'id');
+        $specialization = $course->specialization;
+        $department = $course->department;
 
         return view('courses.edit')
-        ->with('specializations',$specializations)
-        ->with('departments',$departments)
-        ->with('course',$course)
-        ->with('specialization',$specialization)
-        ->with('department',$department);
+            ->with('specializations', $specializations)
+            ->with('departments', $departments)
+            ->with('course', $course)
+            ->with('specialization', $specialization)
+            ->with('department', $department);
     }
 
     /**
@@ -95,7 +95,7 @@ class CourseController extends Controller
         $course->fill($request->input());
         $course->save();
 
-        return redirect()->action([CourseController::class,'index']);
+        return redirect()->action([CourseController::class, 'index']);
     }
 
     /**
@@ -107,6 +107,6 @@ class CourseController extends Controller
     public function destroy(Course $course)
     {
         Course::where('id', $course->id)->delete();
-        return redirect()->action([CourseController::class,'index']);
+        return redirect()->action([CourseController::class, 'index']);
     }
 }

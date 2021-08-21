@@ -6,7 +6,7 @@
 
 @section('content')
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -35,7 +35,10 @@
             </td>
         </tr>
         @empty
-        <p class="col-12">No roles available!</p>
+        <tr>
+            <td class="no-data">No roles available!</td>
+
+        </tr>
         @endforelse
     </tbody>
 </table>

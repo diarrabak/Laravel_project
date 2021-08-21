@@ -33,7 +33,12 @@
                 <td class="lg-visible">{{$user->biography}}</td>
             </tr>
             @empty
-            <p class="col-12"> No user available in {{$academicgroup->name }}!</p>
+            <tr>
+                <td class="no data">
+                    No user available in {{$academicgroup->name }}!
+                </td>
+            </tr>
+
             @endforelse
         </tbody>
     </table>

@@ -46,7 +46,10 @@
 
 
     @empty
-    <p class="col-12">No information available for now!</p>
+
+    <p class="no-data">
+        No information available for now!
+    </p>
     @endforelse
 
 </div>

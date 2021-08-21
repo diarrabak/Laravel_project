@@ -31,31 +31,31 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
-     // A user is reponsible for one specialization
-     public function specialization()
-     {
-         return $this->hasOne(Specialization::class);
-     }
+    // A user is reponsible for one specialization
+    public function specialization()
+    {
+        return $this->hasOne(Specialization::class);
+    }
 
-     public function articles()
-     {
-         return $this->hasMany(Article::class);
-     }
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 
-     public function department()
-     {
-         return $this->belongsTo(Department::class);
-     }
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 
-     public function academicgroup()
-     {
-         return $this->belongsTo(Academicgroup::class);
-     }
+    public function academicgroup()
+    {
+        return $this->belongsTo(Academicgroup::class);
+    }
 
-      //A user can have many roles
+    //A user can have many roles
     public function roles()
     {
-    	return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Role::class);
     }
 
     /**

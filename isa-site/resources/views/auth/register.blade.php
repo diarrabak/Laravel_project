@@ -18,9 +18,9 @@
                                 <input id="name" type="text" placeholder="First name, Last name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -32,9 +32,9 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -46,9 +46,9 @@
                                 <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title">
 
                                 @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -56,12 +56,12 @@
                             <label for="biography" class="col-md-4 col-form-label text-md-right">{{ __('Biography') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="biography" class="form-control @error('biography') is-invalid @enderror" name="biography"  required autocomplete="biography">{{ old('biography') }} </textarea>
+                                <textarea id="biography" class="form-control @error('biography') is-invalid @enderror" name="biography" required autocomplete="biography">{{ old('biography') }} </textarea>
 
                                 @error('biography')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -73,13 +73,13 @@
                                 <input id="picture" type="file" class="form-control @error('picture') is-invalid @enderror" name="picture" required autocomplete="picture">
 
                                 @error('picture')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="research_gate" class="col-md-4 col-form-label text-md-right">{{ __('ResearchGate') }}</label>
 
@@ -87,9 +87,9 @@
                                 <input id="research_gate" type="text" class="form-control @error('research_gate') is-invalid @enderror" name="research_gate" value="{{ old('research_gate') }}" required autocomplete="research_gate">
 
                                 @error('research_gate')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
@@ -101,34 +101,34 @@
                                 <input id="google_scholar" type="text" class="form-control @error('google_scholar') is-invalid @enderror" name="google_scholar" value="{{ old('google_scholar') }}" required autocomplete="google_scholar">
 
                                 @error('google_scholar')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
 
                         <div class="form-group row">
-        <label class="col-md-4 col-form-label text-md-right" for="department_id">Department</label>
-        <div class="col-sm-6">
-            <select name="department_id" class="form-control" id="department_id">
-                @foreach($departments as $id => $display)
-                    <option value="{{ $id }}" {{ (isset($department->id) && $id === $department->id) ? 'selected' : '' }}>{{ $display }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
+                            <label class="col-md-4 col-form-label text-md-right" for="department_id">Department</label>
+                            <div class="col-sm-6">
+                                <select name="department_id" class="form-control" id="department_id">
+                                    @foreach($departments as $id => $display)
+                                    <option value="{{ $id }}" {{ (isset($department->id) && $id === $department->id) ? 'selected' : '' }}>{{ $display }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
 
-    <div class="form-group row">
-        <label class="col-md-4 col-form-label text-md-right" for="academicgroup_id">Academic group</label>
-        <div class="col-sm-6">
-            <select name="academicgroup_id" class="form-control" id="academicgroup_id">
-                @foreach($academic_groups as $id => $display)
-                    <option value="{{ $id }}" {{ (isset($academic_group->id) && $id === $academic_group->id) ? 'selected' : '' }}>{{ $display }}</option>
-                @endforeach
-            </select>
-        </div>
-    </div>
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right" for="academicgroup_id">Academic group</label>
+                            <div class="col-sm-6">
+                                <select name="academicgroup_id" class="form-control" id="academicgroup_id">
+                                    @foreach($academic_groups as $id => $display)
+                                    <option value="{{ $id }}" {{ (isset($academic_group->id) && $id === $academic_group->id) ? 'selected' : '' }}>{{ $display }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -137,9 +137,9 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>

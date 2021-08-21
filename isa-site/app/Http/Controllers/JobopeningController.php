@@ -15,8 +15,8 @@ class JobopeningController extends Controller
      */
     public function index()
     {
-       $jobopenings=Jobopening::get();
-       return view('jobopenings.index', compact('jobopenings'));
+        $jobopenings = Jobopening::get();
+        return view('jobopenings.index', compact('jobopenings'));
     }
 
     /**
@@ -26,10 +26,10 @@ class JobopeningController extends Controller
      */
     public function create()
     {
-        $departments=Department::get()->pluck('name','id');
+        $departments = Department::get()->pluck('name', 'id');
         return view('jobopenings.create')
-        ->with('departments',$departments)
-        ->with('jobopening',(new Jobopening()));
+            ->with('departments', $departments)
+            ->with('jobopening', (new Jobopening()));
     }
 
     /**
@@ -41,8 +41,8 @@ class JobopeningController extends Controller
     public function store(Request $request)
     {
         Jobopening::create($request->input());
-        
-        return redirect()->action([JobopeningController::class,'index']);
+
+        return redirect()->action([JobopeningController::class, 'index']);
     }
 
     /**
@@ -54,7 +54,7 @@ class JobopeningController extends Controller
     public function show(Jobopening $jobopening)
     {
         return view('jobopenings.show')
-        ->with('jobopening',$jobopening);
+            ->with('jobopening', $jobopening);
     }
 
     /**
@@ -65,12 +65,12 @@ class JobopeningController extends Controller
      */
     public function edit(Jobopening $jobopening)
     {
-        $departments=Department::get()->pluck('name','id');
-        $department=$jobopening->department;
+        $departments = Department::get()->pluck('name', 'id');
+        $department = $jobopening->department;
         return view('jobopenings.edit')
-        ->with('jobopening',$jobopening)
-        ->with('departments',$departments)
-        ->with('department',$department);
+            ->with('jobopening', $jobopening)
+            ->with('departments', $departments)
+            ->with('department', $department);
     }
 
     /**
@@ -84,7 +84,7 @@ class JobopeningController extends Controller
     {
         $jobopening->fill($request->input());
         $jobopening->save();
-        return redirect()->action([JobopeningController::class,'index']);
+        return redirect()->action([JobopeningController::class, 'index']);
     }
 
     /**
@@ -96,6 +96,6 @@ class JobopeningController extends Controller
     public function destroy(Jobopening $jobopening)
     {
         Jobopening::where('id', $jobopening->id)->delete();
-        return redirect()->action([JobopeningController::class,'index']);
+        return redirect()->action([JobopeningController::class, 'index']);
     }
 }

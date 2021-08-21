@@ -42,7 +42,7 @@
 
             <li>{{$article->title}}</li>
             @empty
-            <p class="col-12">No articles for {{$user->title}} {{$user->name}}</p>
+            <p class="col-12 no-data">No articles for {{$user->title}} {{$user->name}}</p>
             @endforelse
         </ul>
         <p class="col-sm-12"><a href="mailto:{{$user->email}}" class="btn btn-primary">Contact me!</a></p>

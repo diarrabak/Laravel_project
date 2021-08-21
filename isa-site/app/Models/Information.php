@@ -9,17 +9,17 @@ class Information extends Model
 {
     use HasFactory;
     protected $fillable = [
-    	'title',
-    	'description',
+        'title',
+        'description',
         'document',
         'semester',
         'department_id',
     ];
     public $timestamps = false;
 
-     //An information belongs to a department
-     public function department()
-     {
-         return $this->belongsTo(Department::class);
-     }
+    //An information belongs to a department
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }

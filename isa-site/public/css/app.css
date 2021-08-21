@@ -209,6 +209,22 @@ footer {
 
 footer li {
     list-style: none;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+    color: white;
+}
+
+footer li a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+footer li a:hover {
+    color:#007bff;
+}
+
+.no-data{
+    color:red;
+    text-align: center;
 }
 
 @media (min-width: 768px) {

@@ -44,7 +44,12 @@
             </td>
         </tr>
         @empty
-        <p class="col-12"> No academic groups available !</p>
+        <tr>
+            <td class="no-data">
+                No academic groups available !
+            </td>
+        </tr>
+
         @endforelse
     </tbody>
 </table>

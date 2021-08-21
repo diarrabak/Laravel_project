@@ -15,8 +15,8 @@ class AcademicgroupController extends Controller
      */
     public function index()
     {
-        $academicgroups=Academicgroup::get();
-        return view('academicgroups.index',compact('academicgroups'));
+        $academicgroups = Academicgroup::get();
+        return view('academicgroups.index', compact('academicgroups'));
     }
 
     /**
@@ -26,11 +26,10 @@ class AcademicgroupController extends Controller
      */
     public function create()
     {
-        $departments=Department::get()->pluck('name','id');
+        $departments = Department::get()->pluck('name', 'id');
         return view('academicgroups.create')
-        ->with('departments',$departments)
-        ->with('academicgroup', (new Academicgroup()));
-        
+            ->with('departments', $departments)
+            ->with('academicgroup', (new Academicgroup()));
     }
 
     /**
@@ -50,7 +49,7 @@ class AcademicgroupController extends Controller
         ]);
         $academicgroup->save(); // Finally, save the record.
 
-        return redirect()->action([AcademicgroupController::class,'index']);
+        return redirect()->action([AcademicgroupController::class, 'index']);
     }
 
     /**
@@ -91,9 +90,9 @@ class AcademicgroupController extends Controller
     {
         $request->picture->store('images', 'public');
         $academicgroup->fill($request->input());
-        $academicgroup->picture= $request->picture->hashName();
+        $academicgroup->picture = $request->picture->hashName();
         $academicgroup->save();
-        return redirect()->action([AcademicgroupController::class,'index']);
+        return redirect()->action([AcademicgroupController::class, 'index']);
     }
 
     /**
@@ -105,6 +104,6 @@ class AcademicgroupController extends Controller
     public function destroy(Academicgroup $academicgroup)
     {
         Academicgroup::where('id', $academicgroup->id)->delete();
-        return redirect()->action([AcademicgroupController::class,'index']);
+        return redirect()->action([AcademicgroupController::class, 'index']);
     }
 }

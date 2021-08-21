@@ -17,16 +17,16 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments=Department::get();
-        return view('departments.index',compact('departments'));
+        $departments = Department::get();
+        return view('departments.index', compact('departments'));
     }
 
     /* Home page */
     public function homepage()
     {
-        $departments=Department::get();
-        $labs=Laboratory::get();
-        return view('frontpages.homepage',compact('departments'),compact('labs'));
+        $departments = Department::get();
+        $labs = Laboratory::get();
+        return view('frontpages.homepage', compact('departments'), compact('labs'));
     }
     /**
      * Show the form for creating a new resource.
@@ -36,7 +36,7 @@ class DepartmentController extends Controller
     public function create()
     {
         return view('departments.create')
-               ->with('department', (new Department()));
+            ->with('department', (new Department()));
     }
 
     /**
@@ -57,7 +57,7 @@ class DepartmentController extends Controller
 
 
 
-        return redirect()->action([DepartmentController::class,'index']);
+        return redirect()->action([DepartmentController::class, 'index']);
     }
 
     /**
@@ -93,9 +93,9 @@ class DepartmentController extends Controller
     {
         $request->picture->store('images', 'public');
         $department->fill($request->input());
-        $department->picture= $request->picture->hashName();
+        $department->picture = $request->picture->hashName();
         $department->save();
-        return redirect()->action([DepartmentController::class,'index']);
+        return redirect()->action([DepartmentController::class, 'index']);
     }
 
     /**
@@ -107,6 +107,6 @@ class DepartmentController extends Controller
     public function destroy(Department $department)
     {
         Department::where('id', $department->id)->delete();
-        return redirect()->action([DepartmentController::class,'index']);
+        return redirect()->action([DepartmentController::class, 'index']);
     }
 }
