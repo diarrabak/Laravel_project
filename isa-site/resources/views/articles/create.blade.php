@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col">
+<h1>Adding a new article</h1>
     <form action="{{ route('articles.store', ['article' => $article]) }}" method="POST">
         @csrf
         <div class="form-group row">
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <div class="form-group row mb-0">
+        <div class="my-buttons form-group row mb-0">
             <div class="col-md-4 offset-md-4">
                 <button type="submit" class="btn btn-primary">
                     Add article
@@ -98,5 +98,5 @@
             </div>
         </div>
     </form>
-</div>
+
 @endsection

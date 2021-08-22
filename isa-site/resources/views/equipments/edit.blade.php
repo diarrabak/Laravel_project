@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col">
+<h1>Editing {{$equipment->name}}</h1>
     <form action="{{ route('equipments.update', ['equipment' => $equipment]) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
@@ -57,7 +57,7 @@
         </div>
 
 
-        <div class="form-group row mb-0">
+        <div class="my-buttons form-group row mb-0">
             <div class="col-md-4 offset-md-4">
                 <button type="submit" class="btn btn-primary">
                     Update equipment

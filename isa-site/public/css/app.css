@@ -37,10 +37,19 @@ h1,
 h2 {
     text-align: center;
 }
+
+h1{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 h2 {
     color: #0e5b42;
-    margin-top: 0.75em !important;
-    margin-bottom: 0.75em !important;
+    margin-top: 0.75em ;
+    margin-bottom: 0.75em ;
+    text-align: center;
+    font-size: 2em;
+    /* margin-top: 0;
+    margin-bottom: 0.5em; */
 }
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.8) !important;
@@ -76,6 +85,7 @@ form,
 }
 main {
     position: relative;
+    padding-bottom: 1em;
 }
 
 .add-btn {
@@ -179,12 +189,6 @@ td {
     width: 32%;
 }
 
-h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-}
 .nav-top {
     max-width: 100%;
     width: 100%;
@@ -203,8 +207,8 @@ h2 {
 footer {
     background-color: #343a40;
     color: white;
-    padding-top:2em !important;
-    padding-bottom:1.5em !important;
+    padding-top: 2em !important;
+    padding-bottom: 1.5em !important;
 }
 
 footer li {
@@ -219,12 +223,17 @@ footer li a {
 }
 
 footer li a:hover {
-    color:#007bff;
+    color: #007bff;
 }
 
-.no-data{
-    color:red;
+.no-data {
+    color: red;
     text-align: center;
+}
+
+main form .row {
+    margin-bottom: 0.75em;
+    margin-top: 0.75em;
 }
 
 @media (min-width: 768px) {
