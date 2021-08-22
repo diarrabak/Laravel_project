@@ -43,11 +43,10 @@
 
     @empty
 
-    <tr>
-        <td class="no-data">
-            No equipment available!
-        </td>
-    </tr>
+
+    <p class="no-data">
+        No equipment available!
+    </p>
 
     @endforelse
 

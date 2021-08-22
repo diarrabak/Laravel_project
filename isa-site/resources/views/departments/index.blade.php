@@ -44,11 +44,9 @@
 
     @empty
 
-    <tr>
-        <td class="no-data">
-            No departments available!
-        </td>
-    </tr>
+    <p class="no-data">
+        No departments available!
+    </p>
 
     @endforelse
 
