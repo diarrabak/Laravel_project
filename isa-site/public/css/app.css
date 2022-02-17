@@ -1,418 +1,448 @@
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
 .bio img,
 .presentation img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1em;
-    width: 45%;
-    margin-bottom: 0.5em;
-    margin-right: 1.75em;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  width: 45%;
+  margin-bottom: 0.5em;
+  margin-right: 1.75em;
+  float: left;
+}
+@media (min-width: 576px) {
+  .bio img,
+.presentation img {
+    width: 95%;
+    margin-bottom: 2.5%;
+    margin-right: 2.5%;
     float: left;
+  }
 }
 
+.presentation {
+  padding: 0 2em;
+  margin-bottom: 1.5em;
+  margin-top: 2em;
+}
 .presentation img {
-    width: 40%;
+  width: 40%;
+}
+.presentation p {
+  text-align: justify;
+  line-height: 1.75;
+}
+.presentation h2 {
+  margin-bottom: 1em;
 }
 
 .card {
-    margin-bottom: 0em;
-    padding: 1em;
-    border: 0;
+  margin-bottom: 0em;
+  padding: 1em;
+  border: 0;
+}
+.card h5 {
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .card {
+    padding-right: 1em;
+    padding-left: 1em;
+  }
 }
 
 .card-img-top:hover,
 .bio img {
-    border: 2px solid white;
+  border: 2px solid white;
+}
+
+table thead {
+  display: none;
 }
 
 h1,
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
-h1{
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
+
 h2 {
-    color: #0e5b42;
-    margin-top: 0.75em ;
-    margin-bottom: 0.75em ;
-    text-align: center;
-    font-size: 2em;
-    /* margin-top: 0;
-    margin-bottom: 0.5em; */
+  color: #0e5b42;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  font-size: 2em;
+  /* margin-top: 0;
+  margin-bottom: 0.5em; */
 }
+
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
+
 .row,
 form,
 .collapse,
 .presentation {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .department-image {
-    max-width: 100%;
-    width: 100%;
-    height: 500px;
+  max-width: 100%;
+  width: 100%;
+  height: 500px;
 }
-.presentation p {
-    text-align: justify;
-    line-height: 1.75;
+@media screen and (max-width: 576px) {
+  .department-image {
+    height: 300px;
+  }
 }
-.presentation {
-    padding: 0 2em;
-    margin-bottom: 1.5em;
-    margin-top: 2em;
+@media screen and (max-width: 320px) {
+  .department-image {
+    height: 200px;
+  }
 }
-.presentation h2 {
-    margin-bottom: 1em;
-}
+
 .navbar li {
-    margin-left: 2em;
-    font-size: 1.25em;
+  margin-left: 2em;
+  font-size: 1.25em;
 }
+
 main {
-    position: relative;
-    padding-bottom: 1em;
+  position: relative;
+  padding-bottom: 1em;
 }
 
 .add-btn {
-    position: absolute;
-    top: 5%;
-    left: 20%;
-    z-index: 100;
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  z-index: 100;
 }
+
 .container,
 .header {
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-    margin-top: 0 !important;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  margin-top: 0 !important;
 }
+
 .current-user {
-    position: absolute;
-    top: 1%;
-    right: 48%;
-    z-index: 100;
-    color: white;
-    font-weight: bold;
+  position: absolute;
+  top: 1%;
+  right: 48%;
+  z-index: 100;
+  color: white;
+  font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  .current-user {
+    top: 2.5%;
+    display: none;
+  }
+}
+
 .header {
-    padding: 0;
-    position: relative;
+  padding: 0;
+  position: relative;
 }
 
 .testimonial {
-    padding-bottom: 1.5em;
-    background-color: white;
-    color: black;
-    margin-right: 0.15em;
-    text-align: justify;
+  padding-bottom: 1.5em;
+  background-color: white;
+  color: black;
+  margin-right: 0.15em;
+  text-align: justify;
 }
 .testimonial h4,
 .testimonial h5 {
-    text-align: center;
+  text-align: center;
 }
 .testimonial img {
-    margin-left: 40%;
-    max-width: 100%;
-    width: 20%;
+  margin-left: 40%;
+  max-width: 100%;
+  width: 20%;
 }
+
 .documents li {
-    text-align: justify;
+  text-align: justify;
 }
+
 .department {
-    position: absolute;
-    color: white;
+  position: absolute;
+  color: white;
 }
+
 .card-img-top {
-    max-width: 100%;
-    height: 250px;
+  max-width: 100%;
+  height: 250px;
 }
-.card h5 {
-    text-align: center;
-}
+
 .depart-header {
-    top: 15%;
-    left: 30%;
-    font-size: 5em;
+  top: 15%;
+  left: 30%;
+  font-size: 5em;
+}
+@media screen and (max-width: 320px) {
+  .depart-header {
+    left: 5%;
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 1110px) {
+  .depart-header {
+    left: 20%;
+    font-size: 4em;
+  }
 }
 
 .depart-desc {
-    top: 45%;
+  top: 45%;
+  left: 35%;
+  font-size: 3em;
+}
+@media screen and (max-width: 576px) {
+  .depart-desc {
+    top: 50%;
     left: 35%;
-    font-size: 3em;
+    font-size: 2em;
+  }
 }
-.front {
-    color: green;
-}
-.main-title,
-h4 {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-.news-article {
-    margin: 1.25em;
-    background-color: lightgray;
-    padding-bottom: 1em;
-    padding-top: 1em;
-}
-.news-article h5 {
-    color: #3232c4;
-}
-.news-article .info-desc {
-    display: none;
+@media screen and (max-width: 320px) {
+  .depart-desc {
+    top: 60%;
+    left: 35%;
+    font-size: 2em;
+  }
 }
 
+.front {
+  color: green;
+}
+
+.main-title,
+h4 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.news-article {
+  margin: 1.25em;
+  background-color: lightgray;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+.news-article h5 {
+  color: #3232c4;
+}
+.news-article .info-desc {
+  display: none;
+}
 .news-article:hover .info-desc {
-    display: block;
+  display: block;
 }
 
 .special-img {
-    max-width: 100%;
-    width: 30%;
-    height: 70px;
+  max-width: 100%;
+  width: 30%;
+  height: 70px;
 }
+@media screen and (max-width: 576px) {
+  .special-img {
+    width: 90%;
+  }
+}
+
 td {
-    width: 32%;
+  width: 32%;
+}
+@media screen and (max-width: 768px) {
+  td {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  td {
+    width: 100%;
+  }
 }
 
 .nav-top {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #11a842;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #11a842;
 }
+
 .logo-login a {
-    color: white;
+  color: white;
 }
 .logo-login li {
-    display: inline-block;
-    text-decoration: none;
-    margin-left: 1em;
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 1em;
 }
+
 footer {
-    background-color: #343a40;
-    color: white;
-    padding-top: 2em !important;
-    padding-bottom: 1.5em !important;
+  background-color: #343a40;
+  color: white;
+  padding-top: 2em !important;
+  padding-bottom: 1.5em !important;
 }
-
 footer li {
-    list-style: none;
-    margin-bottom: 0.5em;
-    font-size: 1.2em;
-    color: white;
+  list-style: none;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  color: white;
 }
-
 footer li a {
-    color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
-
 footer li a:hover {
-    color: #007bff;
+  color: #007bff;
 }
 
 .no-data {
-    color: red;
-    text-align: center;
+  color: red;
+  text-align: center;
 }
 
 main form .row {
-    margin-bottom: 0.75em;
-    margin-top: 0.75em;
-}
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+  margin-bottom: 0.75em;
+  margin-top: 0.75em;
 }
 
 /* GLOBAL STYLES
-      -------------------------------------------------- */
+    -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
-
 body {
-    /* padding-top: 3rem; */
-    /* padding-bottom: 3rem; */
-    color: #5a5a5a;
+  /* padding-top: 3rem; */
+  /* padding-bottom: 3rem; */
+  color: #5a5a5a;
 }
 
 /* CUSTOMIZE THE CAROUSEL
-      -------------------------------------------------- */
-
+    -------------------------------------------------- */
 /* Carousel base class */
 .carousel {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
+  bottom: 3rem;
+  z-index: 10;
+}
+@media (min-width: 40em) {
+  .carousel-caption p {
+    /* Bump up size of carousel content */
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
 }
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-    height: 32rem;
+  height: 32rem;
 }
 .carousel-item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 32rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
 }
 
 /* MARKETING CONTENT
-      -------------------------------------------------- */
-
+    -------------------------------------------------- */
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-.marketing h2 {
-    font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 .marketing .col-lg-4 p {
-    margin-right: 0.75rem;
-    margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+.marketing h2 {
+  font-weight: 400;
 }
 
 /* Featurettes
-      ------------------------- */
-
+    ------------------------- */
 .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 5rem 0;
+  /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
 .featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -0.05rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 50px;
+  }
 }
 
 /* RESPONSIVE CSS
-      -------------------------------------------------- */
-
-@media (min-width: 40em) {
-    /* Bump up size of carousel content */
-    .carousel-caption p {
-        margin-bottom: 1.25rem;
-        font-size: 1.25rem;
-        line-height: 1.4;
-    }
-
-    .featurette-heading {
-        font-size: 50px;
-    }
-}
-
-@media (min-width: 62em) {
-    .featurette-heading {
-        margin-top: 7rem;
-    }
-}
-
+    -------------------------------------------------- */
 @media screen and (max-width: 1110px) {
-    .depart-header {
-        left: 20%;
-        font-size: 4em;
-    }
-
-    .row,
-    form {
-        margin-right: 2em;
-        margin-left: 2em;
-    }
+  .row,
+form {
+    margin-right: 2em;
+    margin-left: 2em;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .lg-visible {
-        display: none;
-    }
+  .depart-header {
+    left: 5%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .depart-header {
+    left: 10%;
+    font-size: 3em;
+  }
+}
 
-    td {
-        width: 50%;
-    }
-
-    .card {
-        padding-right: 1em;
-        padding-left: 1em;
-    }
-
-    .depart-header {
-        left: 5%;
-    }
-    .current-user {
-        top: 2.5%;
-        display: none;
-    }
+@media screen and (max-width: 768px) {
+  .lg-visible {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .depart-header {
-        left: 10%;
-        font-size: 3em;
-    }
-    td {
-        width: 100%;
-    }
-    .special-img {
-        width: 90%;
-    }
-
-    .bio img,
-    .presentation img {
-        width: 95%;
-        margin-bottom: 2.5%;
-        margin-right: 2.5%;
-        float: left;
-    }
-
-    .md-visible {
-        display: none;
-    }
-
-    .depart-desc {
-        top: 50%;
-        left: 35%;
-        font-size: 2em;
-    }
-
-    .department-image {
-        height: 300px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .depart-header {
-        left: 5%;
-        font-size: 2.5em;
-    }
-
-    .department-image {
-        height: 200px;
-    }
-
-    .depart-desc {
-        top: 60%;
-        left: 35%;
-        font-size: 2em;
-    }
+  .md-visible {
+    display: none;
+  }
 }
